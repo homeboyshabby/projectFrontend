@@ -1,0 +1,17 @@
+<h2 style="font-family: monospace;text-align: center;color: black">Online Order Status</h2>
+<div class="container" style="background-color: black">
+    <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Order Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of orderStatus">
+                <td><a>{{item.orderId}}</a></td>
+                <td>{{item.orderType}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

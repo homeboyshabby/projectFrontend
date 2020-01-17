@@ -1,10 +1,9 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
 </head>
 <body>
   <nav class="navbar navbar-inverse" style="background-color: black;font-family: monospace;font-size: 24px;color: white">
@@ -18,14 +17,15 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li><a routerLink="/menu">Menu List</a></li>
-          <li><a routerLink="/table">Table List</a></li>
-          <li><a routerLink="/order">Take Order</a></li>
-          <li><a routerLink="/bills">Check Bills</a></li>
+          <li><a routerLink="/admin/onlineorder">Online Order Status</a></li>
+          <li><a routerLink="/admin/addmenu">Add Menu Items</a></li>
+          <li><a routerLink="/admin/addtables">Add Tables</a></li>
+          <li><a routerLink="/admin/updateemp">Edit Employee</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  <button style="font-size: 20px;float: right;" type="submit" class="btn btn-danger">Logout</button>
 </body>
-</html> -->
+</html>
 <router-outlet></router-outlet>

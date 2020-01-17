@@ -1,0 +1,28 @@
+<div>
+    <h2 style="font-family: monospace;text-align: center;color: black">Table List</h2>
+    <div class="container">
+        <div style="width:1200px;height: 200px;">
+                <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                    <table style="height: 100%; width: 100%">
+                            <tr *ngFor="let item of tables" >
+                                <td>
+                                    <a routerLink="/waiter/menu/{{item.tableId}}"><img name="{{item.tableId}}"  style="height: 150px;width: 150px" src="../../assets/637157.svg"></a>
+                                    <br>
+                                    <h4 style="font-family: monospace;color: black">Table Id : {{item.tableId}} &nbsp; &nbsp; Status : {{item.tableStatus}}</h4>
+                                </td>
+                                <!-- <td>
+                                    <img style="height: 150px;width: 150px" src="../../assets/637157.svg">
+                                </td>
+                                <td>
+                                    <img style="height: 150px;width: 150px" src="../../assets/637157.svg">
+                                </td>
+                                <td>
+                                    <img style="height: 150px;width: 150px" src="../../assets/637157.svg">
+                                </td> -->
+                                <!-- (click)="goToTakeOrder(item.tableId)" -->
+                            </tr>
+                        </table>
+            </div>
+        </div>
+    </div>
+</div>
