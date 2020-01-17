@@ -17,6 +17,10 @@ import { OnlineOrderComponent } from './online-order/online-order.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
 import { AddTablesComponent } from './add-tables/add-tables.component';
 import { UpdateEmpComponent } from './update-emp/update-emp.component';
+import { HomeComponent } from './home/home.component';
+import { MainComponent } from './main/main.component';
+import { OrderOnlineComponent } from './order-online/order-online.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 
 @NgModule({
@@ -34,7 +38,11 @@ import { UpdateEmpComponent } from './update-emp/update-emp.component';
     OnlineOrderComponent,
     AddMenuComponent,
     AddTablesComponent,
-    UpdateEmpComponent
+    UpdateEmpComponent,
+    HomeComponent,
+    MainComponent,
+    OrderOnlineComponent,
+    ReservationsComponent
   ],
   imports: [
     BrowserModule,

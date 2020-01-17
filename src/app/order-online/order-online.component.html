@@ -1,0 +1,28 @@
+<div class="container">
+    <h2 style="font-family: monospace;text-align: center;color: black">Online Order</h2>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="font-family: monospace;text-align: center;color: black; width: 600px;font-size: 24px">Item Name</th>
+                    <!-- <th style="font-family: monospace;text-align: center;color: black; width: 600px;font-size: 24px">Quantity</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of menu">
+                    <div>
+                        <td
+                            style="font-family: monospace;text-align: center;color: black; width: 600px;font-size: 24px">
+                            {{item.itemDesc}}</td>
+                        <!-- <td>
+                            <div class="form-group">
+                                <span><input style="align-items: center" autofocus style="width: 100px" ngModel type="text" class="form-control"
+                                        id="No" name="No" placeholder="Enter Quanity"></span>
+                            </div>
+                        </td> -->
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
