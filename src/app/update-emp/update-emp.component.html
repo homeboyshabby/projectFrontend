@@ -10,10 +10,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of menu">
-                    <td>{{item.itemId}}</td>
-                    <td>{{item.itemDesc}}</td>
-                    <td>{{item.itemName}}</td>
+                <tr *ngFor="let item of emps">
+                    <td><a routerLink="/admin/updateemp/{{item.employeeId}}">{{item.employeeId}}</a></td>
+                    <td>{{item.employeeName}}</td>
+                    <td>{{item.role}}</td>
                 </tr>
             </tbody>
         </table>

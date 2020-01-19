@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 style="font-family: monospace;text-align: center;color: black">Edit Profile</h2>
+    <form #myForm="ngForm" (ngSubmit)="onEditProfile(myForm)">
+        <h3 style="font-family: monospace;color: black">Name </h3>
+        <div class="form-group">
+            <span><input autofocus style="width: 500px" type="text" class="form-control" id="employeeName"
+                    name="employeeName" [(ngModel)]="emp.employeeName" placeholder="Name"></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Email </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="email" class="form-control" id="email" name="employeeEmail"
+                    [(ngModel)]="emp.employeeEmail" placeholder="employeeEmail"></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Phone Number </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="text" class="form-control" id="employeePhoneNumber"
+                    name="employeePhoneNumber" [(ngModel)]="emp.employeePhoneNumber" placeholder="Phone Number "></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Password </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="text" class="form-control" id="employeePassword"
+                    name="employeePassword" [(ngModel)]="emp.employeePassword" placeholder="Password "></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Role </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="text" class="form-control" id="role" name="role"
+                    [(ngModel)]="emp.role" placeholder="Role"></span>
+        </div>
+        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Edit Profile</button>
+    </form>
+</div>

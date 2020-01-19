@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-update-emp',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./update-emp.component.css']
 })
 export class UpdateEmpComponent implements OnInit {
-
-  constructor() { }
+  emps:any;
+  constructor(private service:DataService) { }
 
   ngOnInit() {
+    this.service.showEmp().subscribe((res)=>{
+      this.emps = res;
+      console.log(this.emps)
+    })
   }
 
 }

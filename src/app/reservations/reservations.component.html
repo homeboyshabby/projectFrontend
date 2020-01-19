@@ -1,21 +1,22 @@
 <h2 style="font-family: monospace;text-align: center;color: black">Reservations</h2>
 <div class="container">
-    <form>
+    <form #myForm="ngForm" (ngSubmit)="addReservation(myForm)">
         <h3 style="font-family: monospace;color: black">Number Of People</h3>
         <div class="form-group">
-            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="people" name="people"
+            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="resNumberOfPeople" name="resNumberOfPeople"
                     placeholder="No. of people"></span>
         </div>
         <h3 style="font-family: monospace;color: black">Reservation Details</h3>
         <div class="form-group">
-            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="details" name="details"
+            <span><input style="width: 500px" ngModel type="text" class="form-control" id="resDetails" name="resDetails"
                     placeholder="Details"></span>
         </div>
         <h3 style="font-family: monospace;color: black">Reservation Date</h3>
         <div class="form-group">
-            <span><input autofocus style="width: 500px" ngModel type="Date" class="form-control" id="date" name="date"
+            <span><input style="width: 500px" ngModel type="Date" class="form-control" id="resDate" name="resDate"
                     placeholder="Date"></span>
         </div>
-        <button (click)="onReservations()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Reserve Table</button>
+        <!-- <input name="custId" value={{id}}> -->
+        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Reserve Table</button>
     </form>
 </div>

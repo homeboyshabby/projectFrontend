@@ -1,0 +1,9 @@
+<body>
+    <form class="box" #myForm="ngForm" (ngSubmit)="onLogin(myForm)">
+        <h1 style="font-family: monospace;color:white">Employee Login</h1>
+        <input [(ngModel)]="email" type="text" name="employeeEmail" placeholder="Username">
+        <input [(ngModel)]="password" type="password" name="employeePassword" placeholder="Password">
+        <input type="submit" name="" value="Login">
+    </form>
+    <hr>
+</body>

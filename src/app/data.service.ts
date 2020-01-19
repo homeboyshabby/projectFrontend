@@ -5,40 +5,98 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  tablesUrl="http://localhost:8080/Project_demo_spring_hib_rest/waiter/tables"
-  menuUrl="http://localhost:8080/Project_demo_spring_hib_rest/waiter/menu"
-  orderStatusUrl="http://localhost:8080/Project_demo_spring_hib_rest/admin/orderdetails"
-  authCustomerUrl="http://localhost:8080/Project_demo_spring_hib_rest/auth/cust"
-  customerMyOrderUrl="http://localhost:8080/Project_demo_spring_hib_rest/cust/myorders/"
-  constructor(public http:HttpClient) { }
-  //Customer
-  checkLoginCredentailsWithDB(custObj)
+  //admin 
+  tablesUrl = "http://localhost:8080/Project_demo_spring_hib_rest/waiter/tables"
+  menuUrl = "http://localhost:8080/Project_demo_spring_hib_rest/waiter/menu"
+  orderStatusUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/orderdetails"
+  addMenuUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/addmenu"
+  showEmpUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/showemp"
+  getEmpByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getemp/"
+  //
+  //auth
+  authCustomerUrl = "http://localhost:8080/Project_demo_spring_hib_rest/auth/cust"
+  authEmpUrl = "http://localhost:8080/Project_demo_spring_hib_rest/authemp"
+  //
+  //customer 
+  addCustomerUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust"
+  customerMyOrderUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/myorders/"
+  getMyProfileUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/myprofile/"
+  setMyProfileUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/setmyprofile"
+  changeMyPasswordUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/changepassword"
+  showMyReservationsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/myreservations"
+  deleteMyReservationsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/deletemyreservation"
+  orderOnlineUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/orderonline"
+  addMyReservationUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/addmyreservation/"
+  //
+  constructor(public http: HttpClient) { }
+  // start admin
+  addMenuItems(menuObj)
   {
-    return this.http.post(this.authCustomerUrl,custObj);
+    //debugger
+    // console.log(menuObj)
+    return this.http.post(this.addMenuUrl,menuObj);
   }
-  getMyOrders(id)
+  showEmp()
   {
+    return this.http.get(this.showEmpUrl);
+  }
+  getEmpById(id)
+  {
+    console.log("ssss" + id)
+    return this.http.get(this.getEmpByIdUrl + id);
+  }
+  //
+  // Auth
+  checkLoginCredentailsWithDB(custObj) {
+    return this.http.post(this.authCustomerUrl, custObj);
+  }
+  checkLoginCredentailsWithDBForEmp(empObj)
+  {
+    return this.http.post(this.authEmpUrl, empObj);
+  }
+  //
+  //start customer
+  addCust(custObj) {
+    return this.http.post(this.addCustomerUrl, custObj);
+  }
+  getMyOrders(id) {
     return this.http.get(this.customerMyOrderUrl + id);
   }
-
-  //
-  getTables()
-  {
+  getMyProfile(id) {
+    return this.http.get(this.getMyProfileUrl + id);
+  }
+  setMyProfile(custObj) {
+    return this.http.post(this.setMyProfileUrl, custObj);
+  }
+  changeMyPassword(custObj) {
+    return this.http.post(this.changeMyPasswordUrl, custObj);
+  }
+  getMyReservations(custId) {
+    return this.http.post(this.showMyReservationsUrl, custId);
+  }
+  deleteMyReservations(resId) {
+    return this.http.post(this.deleteMyReservationsUrl, resId);
+  }
+  orderOnline(itemname) {
+    return this.http.post(this.orderOnlineUrl, itemname);
+  }
+  addMyReservation(resObj, id) {
+    return this.http.post(this.addMyReservationUrl + id, resObj);
+  }
+  // end Customer
+  getTables() {
     return this.http.get(this.tablesUrl);
   }
 
-  getMenu()
-  {
+  getMenu() {
     return this.http.get(this.menuUrl);
   }
 
-  goToTable(id)
-  {
-    
+  goToTable(id) {
+
   }
 
-  getOnlineOrderStatus()
-  {
+  getOnlineOrderStatus() {
     return this.http.get(this.orderStatusUrl);
   }
 

@@ -18,4 +18,13 @@ export class AddMenuComponent implements OnInit {
     })
   }
 
+  onAddItem(formData)
+  {
+    //debugger
+    let obj = formData.form.value;
+    //console.log(obj);
+    this.service.addMenuItems(obj).subscribe((res)=>{
+      console.log(res);
+    })
+  }
 }

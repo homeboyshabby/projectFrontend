@@ -26,16 +26,12 @@ export class LoginComponent implements OnInit {
     } else if (this.password.length == 0) {
       alert('Enter Password');
     } else {
-      debugger
-      // this.user = 
-      // console.log(this.user);
       this.service.checkLoginCredentailsWithDB(custObj).subscribe((res) => {
         this.user = res;
         console.log(this.user.email);
       })
 
       if (this.user.email == this.email) {
-        console.log("hi")
         sessionStorage['login_status'] = '1';
         localStorage.setItem('email', custObj.email);
         localStorage.setItem('id', this.user.id);
@@ -65,5 +61,12 @@ export class LoginComponent implements OnInit {
 
     }
   }
-
+  onRegister()
+  {
+    this.router.navigate(['/home/register']);
+  }
+  empLogin()
+  {
+    this.router.navigate(['/home/employee']);
+  }
 }

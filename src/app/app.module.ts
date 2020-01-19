@@ -28,6 +28,9 @@ import { CustomerReservationsComponent } from './customer-reservations/customer-
 import { CustomerEditprofileComponent } from './customer-editprofile/customer-editprofile.component';
 import { CustomerChangepasswordComponent } from './customer-changepassword/customer-changepassword.component';
 import { ManagerDailyreportComponent } from './manager-dailyreport/manager-dailyreport.component';
+import { RegisterComponent } from './register/register.component';
+import { EmpLoginComponent } from './emp-login/emp-login.component';
+import { EditEmpComponent } from './edit-emp/edit-emp.component';
 
 
 @NgModule({
@@ -56,7 +59,10 @@ import { ManagerDailyreportComponent } from './manager-dailyreport/manager-daily
     CustomerReservationsComponent,
     CustomerEditprofileComponent,
     CustomerChangepasswordComponent,
-    ManagerDailyreportComponent
+    ManagerDailyreportComponent,
+    RegisterComponent,
+    EmpLoginComponent,
+    EditEmpComponent
   ],
   imports: [
     BrowserModule,
