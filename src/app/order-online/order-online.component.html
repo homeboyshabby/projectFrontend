@@ -1,26 +1,34 @@
 <div class="container">
-    <h2 style="font-family: monospace;text-align: center;color: black">Online Order</h2>
-    <div>
-        <table>
+    <h2 style="font-family: monospace;text-align: center;color: black">Order Online</h2>
+    <form>
+        <h3 style="font-family: monospace;color: black">Select Item </h3>
+        <div class="form-group">
+            <!-- <label for="menulist">Menu</label> -->
+            <select style="font-family: monospace;color: black" class="form-control" id="menulist">
+              <option id="{{item.itemId}}" *ngFor="let item of menu">{{item.itemDesc}}</option>
+            </select>
+          </div>
+        <h3 style="font-family: monospace;color: black">Quantity </h3>
+        <div class="form-group">
+            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="email" name="email"
+                    placeholder="Quantity"></span>
+        </div>
+        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Add Item</button>
+    </form>
+    <div class="jumbotron" style="background-color: black; margin-top:10px">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
             <thead>
                 <tr>
-                    <th style="font-family: monospace;text-align: center;color: black; width: 600px;font-size: 24px">Item Name</th>
-                    <!-- <th style="font-family: monospace;text-align: center;color: black; width: 600px;font-size: 24px">Quantity</th> -->
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let item of menu">
-                    <div>
-                        <td
-                            style="font-family: monospace;text-align: center;color: black; width: 600px;font-size: 24px">
-                            {{item.itemDesc}}</td>
-                        <!-- <td>
-                            <div class="form-group">
-                                <span><input style="align-items: center" autofocus style="width: 100px" ngModel type="text" class="form-control"
-                                        id="No" name="No" placeholder="Enter Quanity"></span>
-                            </div>
-                        </td> -->
-                    </div>
+                    <td>{{item.itemDesc}}</td>
+                    <td>2</td>
+                    <td>{{item.itemPrice}}</td>
                 </tr>
             </tbody>
         </table>

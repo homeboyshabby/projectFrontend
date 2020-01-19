@@ -1,20 +1,21 @@
 <h2 style="font-family: monospace;text-align: center;color: black">Reservations</h2>
 <div class="container">
     <form>
-        <h3 style="font-family: monospace;color: black">Enter Table Id : </h3>
+        <h3 style="font-family: monospace;color: black">Number Of People</h3>
         <div class="form-group">
-            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="No" name="No"
-                    placeholder="Enter Table Id"></span>
+            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="people" name="people"
+                    placeholder="No. of people"></span>
         </div>
-        <h3 style="font-family: monospace;color: black">Check Food For Order</h3>
-        <div *ngFor="let item of menus">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label style="font-family: monospace;color: black" class="form-check-label" for="defaultCheck1">&nbsp;
-                    {{item.itemDesc}}
-                </label>
-            </div>
+        <h3 style="font-family: monospace;color: black">Reservation Details</h3>
+        <div class="form-group">
+            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="details" name="details"
+                    placeholder="Details"></span>
         </div>
-        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Submit Order</button>
+        <h3 style="font-family: monospace;color: black">Reservation Date</h3>
+        <div class="form-group">
+            <span><input autofocus style="width: 500px" ngModel type="Date" class="form-control" id="date" name="date"
+                    placeholder="Date"></span>
+        </div>
+        <button (click)="onReservations()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Reserve Table</button>
     </form>
 </div>

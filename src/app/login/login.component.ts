@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,44 +9,60 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   email = '';
   password = '';
-  constructor(private router: Router) { }
+  user: any;
+  constructor(private router: Router,
+    private service: DataService) {
+  }
 
   ngOnInit() {
   }
 
-  onLogin() {
-  
+  onLogin(entireData) {
+    let custObj = entireData.form.value;
+    //console.log(custObj)
+    this.email = custObj.email;
     if (this.email.length == 0) {
-      alert('enter email');
-    } else if (this.password.length ==0) {
-      alert('enter password');
+      alert('Enter Email');
+    } else if (this.password.length == 0) {
+      alert('Enter Password');
     } else {
+      debugger
+      // this.user = 
+      // console.log(this.user);
+      this.service.checkLoginCredentailsWithDB(custObj).subscribe((res) => {
+        this.user = res;
+        console.log(this.user.email);
+      })
 
-      if(this.email=='admin')
-      {
-          sessionStorage['login_status'] = '1';
-          localStorage.setItem('email',this.email);
-          localStorage.setItem('flag','true');
-          this.router.navigate(['/admin']);
+      if (this.user.email == this.email) {
+        console.log("hi")
+        sessionStorage['login_status'] = '1';
+        localStorage.setItem('email', custObj.email);
+        localStorage.setItem('id', this.user.id);
+        localStorage.setItem('flag', 'true');
+        this.router.navigate(['/customer']);
+      } else if (this.email == 'customer') {
+        sessionStorage['login_status'] = '1';
+        localStorage.setItem('email', this.email);
+        localStorage.setItem('flag', 'true');
+        this.router.navigate(['/customer']);
       }
-      else if(this.email=='manager')
-      {
-        
-          sessionStorage['login_status'] = '1';
-          localStorage.setItem('email',this.email);
-          localStorage.setItem('flag','true');
-          this.router.navigate(['/manager']);
-      }else if(this.email=='waiter')
-      {
-          sessionStorage['login_status'] = '1';
-          localStorage.setItem('email',this.email);
-          localStorage.setItem('flag','true');
-          this.router.navigate(['/waiter']);
-      }else{
+      else if (this.email == 'manager') {
+
+        sessionStorage['login_status'] = '1';
+        localStorage.setItem('email', this.email);
+        localStorage.setItem('flag', 'true');
+        this.router.navigate(['/manager']);
+      } else if (this.email == 'waiter') {
+        sessionStorage['login_status'] = '1';
+        localStorage.setItem('email', this.email);
+        localStorage.setItem('flag', 'true');
+        this.router.navigate(['/waiter']);
+      } else {
         alert("invalid login");
         this.router.navigate(['']);
       }
-      
+
     }
   }
 

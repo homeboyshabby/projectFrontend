@@ -16,6 +16,13 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { OrderOnlineComponent } from './order-online/order-online.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
+import { CustomerOrderdetailsComponent } from './customer-orderdetails/customer-orderdetails.component';
+import { CustomerReservationsComponent } from './customer-reservations/customer-reservations.component';
+import { CustomerEditprofileComponent } from './customer-editprofile/customer-editprofile.component';
+import { CustomerChangepasswordComponent } from './customer-changepassword/customer-changepassword.component';
+import { ManagerDailyreportComponent } from './manager-dailyreport/manager-dailyreport.component';
 
 const routes: Routes = [
   //{path:"",component:LoginComponent},
@@ -33,7 +40,17 @@ const routes: Routes = [
   {path:"admin",component:AdminComponent,children:[{path:"addmenu",component:AddMenuComponent}]},
   {path:"admin",component:AdminComponent,children:[{path:"addtables",component:AddTablesComponent}]},
   {path:"admin",component:AdminComponent,children:[{path:"updateemp",component:UpdateEmpComponent}]},
-  {path:"manager",component:ManagerComponent}
+  {path:"manager",component:ManagerComponent},
+  {path:"manager",component:ManagerComponent,children:[{path:"menu",component:MenuListComponent}]},
+  {path:"manager",component:ManagerComponent,children:[{path:"table",component:TableListComponent}]},
+  {path:"manager",component:ManagerComponent,children:[{path:"order",component:TakeOrderComponent}]},
+  {path:"manager",component:ManagerComponent,children:[{path:"bills",component:BillsComponent}]},
+  {path:"manager",component:ManagerComponent,children:[{path:"dailysalereport",component:ManagerDailyreportComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"",component:CustomerOrdersComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"orderdetails/:id",component:CustomerOrderdetailsComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"myreservations",component:CustomerReservationsComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"editmyprofile",component:CustomerEditprofileComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"changepassword",component:CustomerChangepasswordComponent}]}
 ];
 
 @NgModule({

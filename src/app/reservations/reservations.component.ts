@@ -11,5 +11,9 @@ export class ReservationsComponent implements OnInit {
 
   ngOnInit() {
   }
+  onReservations()
+  {
+    console.log("hi");
+  }
 
 }

@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
-  selector: 'app-waiter',
-  templateUrl: './waiter.component.html',
-  styleUrls: ['./waiter.component.css']
+  selector: 'app-customer',
+  templateUrl: './customer.component.html',
+  styleUrls: ['./customer.component.css']
 })
-export class WaiterComponent implements OnInit {
+export class CustomerComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -18,5 +17,4 @@ export class WaiterComponent implements OnInit {
     //console.log("hi")
     this.router.navigate(['/']);
   }
-
 }

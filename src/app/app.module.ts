@@ -21,6 +21,13 @@ import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { OrderOnlineComponent } from './order-online/order-online.component';
 import { ReservationsComponent } from './reservations/reservations.component';
+import { CustomerComponent } from './customer/customer.component';
+import { CustomerOrdersComponent } from './customer-orders/customer-orders.component';
+import { CustomerOrderdetailsComponent } from './customer-orderdetails/customer-orderdetails.component';
+import { CustomerReservationsComponent } from './customer-reservations/customer-reservations.component';
+import { CustomerEditprofileComponent } from './customer-editprofile/customer-editprofile.component';
+import { CustomerChangepasswordComponent } from './customer-changepassword/customer-changepassword.component';
+import { ManagerDailyreportComponent } from './manager-dailyreport/manager-dailyreport.component';
 
 
 @NgModule({
@@ -42,7 +49,14 @@ import { ReservationsComponent } from './reservations/reservations.component';
     HomeComponent,
     MainComponent,
     OrderOnlineComponent,
-    ReservationsComponent
+    ReservationsComponent,
+    CustomerComponent,
+    CustomerOrdersComponent,
+    CustomerOrderdetailsComponent,
+    CustomerReservationsComponent,
+    CustomerEditprofileComponent,
+    CustomerChangepasswordComponent,
+    ManagerDailyreportComponent
   ],
   imports: [
     BrowserModule,
