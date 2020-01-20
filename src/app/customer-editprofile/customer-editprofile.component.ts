@@ -44,7 +44,6 @@ export class CustomerEditprofileComponent implements OnInit {
     this.customer.address.buildingName = custObj.buildingName;
     this.customer.address.area = custObj.area;
     this.customer.address.city = custObj.city;
-    //console.log(this.customer);
     this.service.setMyProfile(this.customer).subscribe((res)=>{
       alert("Profile Updated Successfully!")
     });

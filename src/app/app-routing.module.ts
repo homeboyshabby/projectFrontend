@@ -26,9 +26,11 @@ import { ManagerDailyreportComponent } from './manager-dailyreport/manager-daily
 import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { RegisterComponent } from './register/register.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
+import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
+import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails.component';
 
 const routes: Routes = [
-  //{path:"",component:LoginComponent},
+  //{path:"",component:LoginComponent}, getcust
   {path:"",component:HomeComponent,children:[{path:"",component:MainComponent}]},
   {path:"home",component:HomeComponent,children:[{path:"login",component:LoginComponent}]},
   {path:"home",component:HomeComponent,children:[{path:"onlineorder",component:OrderOnlineComponent}]},
@@ -45,6 +47,8 @@ const routes: Routes = [
   {path:"admin",component:AdminComponent,children:[{path:"addtables",component:AddTablesComponent}]},
   {path:"admin",component:AdminComponent,children:[{path:"updateemp",component:UpdateEmpComponent}]},
   {path:"admin",component:AdminComponent,children:[{path:"updateemp/:id",component:EditEmpComponent}]},
+  {path:"admin",component:AdminComponent,children:[{path:"customers",component:AdminCustomersComponent}]},
+  {path:"admin",component:AdminComponent,children:[{path:"getdetails/:id",component:AdminCustdetailsComponent}]},
   {path:"manager",component:ManagerComponent},
   {path:"manager",component:ManagerComponent,children:[{path:"menu",component:MenuListComponent}]},
   {path:"manager",component:ManagerComponent,children:[{path:"table",component:TableListComponent}]},

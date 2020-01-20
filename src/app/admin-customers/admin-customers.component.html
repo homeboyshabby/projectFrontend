@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 style="font-family: monospace;text-align: center;color: black">Current Customer List</h2>
+    <div class="container" style="background-color: black">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Area</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cust">
+                    <td><a routerLink="/admin/getdetails/{{item.id}}">{{item.id}}</a></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.phoneNumber}}</td>
+                    <td>{{item.address.area}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

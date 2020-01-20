@@ -12,6 +12,9 @@ export class DataService {
   addMenuUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/addmenu"
   showEmpUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/showemp"
   getEmpByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getemp/"
+  showCustUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/customers"
+  getCustOrderDtlByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getcustorders/"
+  getCustReservationDtlByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getcustreservations/"
   //
   //auth
   authCustomerUrl = "http://localhost:8080/Project_demo_spring_hib_rest/auth/cust"
@@ -33,7 +36,7 @@ export class DataService {
   addMenuItems(menuObj)
   {
     //debugger
-    // console.log(menuObj)
+    console.log(menuObj)
     return this.http.post(this.addMenuUrl,menuObj);
   }
   showEmp()
@@ -42,8 +45,19 @@ export class DataService {
   }
   getEmpById(id)
   {
-    console.log("ssss" + id)
     return this.http.get(this.getEmpByIdUrl + id);
+  }
+  showCust()
+  {
+    return this.http.get(this.showCustUrl);
+  }
+  getCustOrderDtlById(id)
+  {
+    return this.http.get(this.getCustOrderDtlByIdUrl + id);
+  }
+  getCustReservationsDtlById(id)
+  {
+    return this.http.get(this.getCustReservationDtlByIdUrl + id);
   }
   //
   // Auth

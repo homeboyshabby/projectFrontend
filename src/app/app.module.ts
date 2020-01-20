@@ -31,6 +31,8 @@ import { ManagerDailyreportComponent } from './manager-dailyreport/manager-daily
 import { RegisterComponent } from './register/register.component';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
+import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
+import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails.component';
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { EditEmpComponent } from './edit-emp/edit-emp.component';
     ManagerDailyreportComponent,
     RegisterComponent,
     EmpLoginComponent,
-    EditEmpComponent
+    EditEmpComponent,
+    AdminCustomersComponent,
+    AdminCustdetailsComponent
   ],
   imports: [
     BrowserModule,
