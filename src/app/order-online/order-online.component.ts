@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-order-online',
@@ -13,6 +14,10 @@ export class OrderOnlineComponent implements OnInit {
   selectedMenu: any;
   showselecteditemdetails: any;
   menu: any;
+  orderId:any;
+  orderDetails = [];
+  reservationObj :any;
+  total:any;
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit() {
@@ -35,13 +40,14 @@ export class OrderOnlineComponent implements OnInit {
   takeOnlineOrder(formData) {
     //debugger
     this.count = parseInt(sessionStorage.getItem("count"));
-    let reservationObj = formData.form.value
-    let total = this.selectedMenu.itemPrice * reservationObj.itemQty
+    this.reservationObj = formData.form.value
+    this.total = this.selectedMenu.itemPrice * this.reservationObj.itemQty
     this.showselecteditemdetails = {
       "itemName": this.selectedMenu.itemDesc,
-      "itemQty": reservationObj.itemQty,
+      "itemQty": this.reservationObj.itemQty,
       "itemPrice": this.selectedMenu.itemPrice,
-      "itemTotal": total
+      "itemTotal": this.total,
+      "itemId": this.selectedMenu.itemId
     }
     
     sessionStorage.setItem(this.count.toString(), JSON.stringify(this.showselecteditemdetails));
@@ -59,5 +65,29 @@ export class OrderOnlineComponent implements OnInit {
     this.service.orderOnline(menuList).subscribe((res) => {
       this.selectedMenu = res;
     })
+  }
+
+  async onPlaceOrder()
+  {
+    await this.service.getOrderId(parseInt(localStorage.getItem("id"))).subscribe((res)=>{
+      this.orderId = res;
+      sessionStorage.setItem("orderId",JSON.stringify(this.orderId))
+    })
+    for(let i = 0; i < this.count; i++)
+    {
+      let t = this.arr[i].itemQty * this.arr[i].itemPrice;
+      this.orderDetails[i] = {
+        "orderItemQty" : this.arr[i].itemQty,
+        "orderItemAmt" : t,
+        "custId" : parseInt(localStorage.getItem("id")),
+        "orderId": JSON.parse(sessionStorage.getItem("orderId")).orderId,
+        "itemId": this.arr[i].itemId
+      }
+      this.service.addOrderDetails(this.orderDetails[i],parseInt(localStorage.getItem("id"))).subscribe((res)=>{
+        console.log(res)
+      })
+      this.router.navigate(['/customer/bills']);
+    }
+    //console.log(this.orderDetails); 
   }
 }

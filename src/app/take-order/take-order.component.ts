@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-take-order',
@@ -9,11 +10,13 @@ import { DataService } from '../data.service';
 export class TakeOrderComponent implements OnInit {
   tables: any;
   menus: any;
-  constructor(private service: DataService) { }
+  id:any;
+  constructor(private service: DataService, private route:ActivatedRoute) { }
 
   ngOnInit() {
     let table = this.service.getTables();
-
+    this.id = this.route.snapshot.paramMap.get("id")
+    //console.log(this.id)
     table.subscribe((res) => {
       this.tables = res;
     })

@@ -30,6 +30,9 @@ export class DataService {
   deleteMyReservationsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/deletemyreservation"
   orderOnlineUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/orderonline"
   addMyReservationUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/addmyreservation/"
+  getOrderIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/setorder/"
+  addOrderDetailsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/addorderdetails/"
+  generateBillUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/genratebill"
   //
   constructor(public http: HttpClient) { }
   // start admin
@@ -96,6 +99,17 @@ export class DataService {
   }
   addMyReservation(resObj, id) {
     return this.http.post(this.addMyReservationUrl + id, resObj);
+  }
+  getOrderId(id) {
+    return this.http.get(this.getOrderIdUrl + id);
+  }
+  addOrderDetails(detailsObj,id){
+    return this.http.post(this.addOrderDetailsUrl + id,detailsObj);
+  }
+  generateBill(billObj)
+  {
+    //console.log(billObj)
+    return this.http.post(this.generateBillUrl,billObj);
   }
   // end Customer
   getTables() {

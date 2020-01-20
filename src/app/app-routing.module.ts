@@ -28,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
 import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails.component';
+import { ShowBillsComponent } from './show-bills/show-bills.component';
 
 const routes: Routes = [
   //{path:"",component:LoginComponent}, getcust
@@ -62,6 +63,7 @@ const routes: Routes = [
   {path:"customer",component:CustomerComponent,children:[{path:"changepassword",component:CustomerChangepasswordComponent}]},
   {path:"customer",component:CustomerComponent,children:[{path:"reservations",component:ReservationsComponent}]},
   {path:"customer",component:CustomerComponent,children:[{path:"onlineorder",component:OrderOnlineComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"bills",component:ShowBillsComponent}]},
 ];
 
 @NgModule({

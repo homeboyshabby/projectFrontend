@@ -33,6 +33,7 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
 import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails.component';
+import { ShowBillsComponent } from './show-bills/show-bills.component';
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails
     EmpLoginComponent,
     EditEmpComponent,
     AdminCustomersComponent,
-    AdminCustdetailsComponent
+    AdminCustdetailsComponent,
+    ShowBillsComponent
   ],
   imports: [
     BrowserModule,

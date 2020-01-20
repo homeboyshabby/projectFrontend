@@ -3,8 +3,8 @@
     <form>
         <h3 style="font-family: monospace;color: black">Enter Table Id : </h3>
         <div class="form-group">
-            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="No" name="No"
-                    placeholder="Enter Table Id"></span>
+            <span><input readonly style="width: 500px" type="text" class="form-control" id="No" name="No"
+                   value={{id}} placeholder="Enter Table Id"></span>
         </div>
         <h3 style="font-family: monospace;color: black">Check Food For Order</h3>
         <div *ngFor="let item of menus">

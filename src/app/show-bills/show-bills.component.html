@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 style="font-family: monospace;text-align: center;color: black">Bill</h2>
+    <div class="jumbotron" style="background-color: black; margin-top:10px">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of arr">
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.itemQty}}</td>
+                    <td>{{item.itemPrice}}</td>
+                    <td>{{item.itemTotal}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2 style="font-family: monospace;color: black">Total Bill : {{totalBill}}</h2>
+    <button (click)="onPay()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Pay Bill</button>
+</div>
