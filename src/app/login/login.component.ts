@@ -10,11 +10,13 @@ export class LoginComponent implements OnInit {
   email = '';
   password = '';
   user: any;
+  count = 0;
   constructor(private router: Router,
     private service: DataService) {
   }
 
   ngOnInit() {
+    sessionStorage.setItem("count",this.count.toString());
   }
 
   onLogin(entireData) {

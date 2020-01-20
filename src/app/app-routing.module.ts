@@ -61,6 +61,7 @@ const routes: Routes = [
   {path:"customer",component:CustomerComponent,children:[{path:"editmyprofile",component:CustomerEditprofileComponent}]},
   {path:"customer",component:CustomerComponent,children:[{path:"changepassword",component:CustomerChangepasswordComponent}]},
   {path:"customer",component:CustomerComponent,children:[{path:"reservations",component:ReservationsComponent}]},
+  {path:"customer",component:CustomerComponent,children:[{path:"onlineorder",component:OrderOnlineComponent}]},
 ];
 
 @NgModule({

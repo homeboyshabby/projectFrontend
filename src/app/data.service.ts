@@ -36,7 +36,7 @@ export class DataService {
   addMenuItems(menuObj)
   {
     //debugger
-    console.log(menuObj)
+    //console.log(menuObj)
     return this.http.post(this.addMenuUrl,menuObj);
   }
   showEmp()
