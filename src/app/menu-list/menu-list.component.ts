@@ -7,13 +7,13 @@ import { DataService } from '../data.service';
   styleUrls: ['./menu-list.component.css']
 })
 export class MenuListComponent implements OnInit {
-  menu:any;
+  menu: any;
   constructor(private service: DataService) { }
 
   ngOnInit() {
     let obs = this.service.getMenu();
 
-    obs.subscribe((res)=>{
+    obs.subscribe((res) => {
       this.menu = res;
     })
   }

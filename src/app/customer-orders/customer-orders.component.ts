@@ -7,13 +7,13 @@ import { DataService } from '../data.service';
   styleUrls: ['./customer-orders.component.css']
 })
 export class CustomerOrdersComponent implements OnInit {
-  myOrder:any;
+  myOrder: any;
   constructor(private service: DataService) { }
 
   ngOnInit() {
     let obs = this.service.getMyOrders(parseInt(localStorage.getItem("id")));
 
-    obs.subscribe((res)=>{
+    obs.subscribe((res) => {
       this.myOrder = res;
     })
   }

@@ -11,7 +11,8 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of myOrder">
-                    <td><a title="Click To Expand" routerLink="/customer/orderdetails/{{item.orderId}}">{{item.orderId}}</a></td>
+                    <td><a title="Click To Expand"
+                            routerLink="/customer/orderdetails/{{item.orderId}}">{{item.orderId}}</a></td>
                     <td>{{item.orderDate}}</td>
                     <td>{{item.orderType}}</td>
                 </tr>
@@ -19,4 +20,3 @@
         </table>
     </div>
 </div>
-

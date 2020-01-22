@@ -7,13 +7,12 @@ import { DataService } from '../data.service';
   styleUrls: ['./admin-customers.component.css']
 })
 export class AdminCustomersComponent implements OnInit {
-  cust:any;
-  constructor(private service:DataService) { }
+  cust: any;
+  constructor(private service: DataService) { }
 
   ngOnInit() {
-    this.service.showCust().subscribe((res)=>{
+    this.service.showCust().subscribe((res) => {
       this.cust = res;
-      console.log(this.cust);
     })
   }
 

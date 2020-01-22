@@ -4,71 +4,97 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
+// Project_demo_spring_hib_rest
 export class DataService {
   //admin 
-  tablesUrl = "http://localhost:8080/Project_demo_spring_hib_rest/waiter/tables"
-  menuUrl = "http://localhost:8080/Project_demo_spring_hib_rest/waiter/menu"
-  orderStatusUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/orderdetails"
-  addMenuUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/addmenu"
-  showEmpUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/showemp"
-  getEmpByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getemp/"
-  showCustUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/customers"
-  getCustOrderDtlByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getcustorders/"
-  getCustReservationDtlByIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/admin/getcustreservations/"
+  tablesUrl = "http://localhost:8080/Project/waiter/tables"
+  menuUrl = "http://localhost:8080/Project/waiter/menu"
+  orderStatusUrl = "http://localhost:8080/Project/admin/orderdetails"
+  addMenuUrl = "http://localhost:8080/Project/admin/addmenu"
+  showEmpUrl = "http://localhost:8080/Project/admin/showemp"
+  getEmpByIdUrl = "http://localhost:8080/Project/admin/getemp/"
+  showCustUrl = "http://localhost:8080/Project/admin/customers"
+  getCustOrderDtlByIdUrl = "http://localhost:8080/Project/admin/getcustorders/"
+  getCustReservationDtlByIdUrl = "http://localhost:8080/Project/admin/getcustreservations/"
+  getCurrentTableCountUrl = "http://localhost:8080/Project/admin/tablecount"
+  addTableUrl = "http://localhost:8080/Project/admin/addtable"
+  getOrderDetailsUrl = "http://localhost:8080/Project/admin/getorderdetails/"
+  addEmpUrl = "http://localhost:8080/Project/admin/addemp/"
   //
   //auth
-  authCustomerUrl = "http://localhost:8080/Project_demo_spring_hib_rest/auth/cust"
-  authEmpUrl = "http://localhost:8080/Project_demo_spring_hib_rest/authemp"
+  authCustomerUrl = "http://localhost:8080/Project/auth/cust"
+  authEmpUrl = "http://localhost:8080/Project/authemp"
   //
   //customer 
-  addCustomerUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust"
-  customerMyOrderUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/myorders/"
-  getMyProfileUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/myprofile/"
-  setMyProfileUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/setmyprofile"
-  changeMyPasswordUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/changepassword"
-  showMyReservationsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/myreservations"
-  deleteMyReservationsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/deletemyreservation"
-  orderOnlineUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/orderonline"
-  addMyReservationUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/addmyreservation/"
-  getOrderIdUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/setorder/"
-  addOrderDetailsUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/addorderdetails/"
-  generateBillUrl = "http://localhost:8080/Project_demo_spring_hib_rest/cust/genratebill"
+  addCustomerUrl = "http://localhost:8080/Project/admin"
+  customerMyOrderUrl = "http://localhost:8080/Project/cust/myorders/"
+  getMyProfileUrl = "http://localhost:8080/Project/cust/myprofile/"
+  setMyProfileUrl = "http://localhost:8080/Project/cust/setmyprofile"
+  changeMyPasswordUrl = "http://localhost:8080/Project/cust/changepassword"
+  showMyReservationsUrl = "http://localhost:8080/Project/cust/myreservations"
+  deleteMyReservationsUrl = "http://localhost:8080/Project/cust/deletemyreservation"
+  orderOnlineUrl = "http://localhost:8080/Project/cust/orderonline"
+  addMyReservationUrl = "http://localhost:8080/Project/cust/addmyreservation/"
+  getOrderIdUrl = "http://localhost:8080/Project/cust/setorder/"
+  addOrderDetailsUrl = "http://localhost:8080/Project/cust/addorderdetails/"
+  generateBillUrl = "http://localhost:8080/Project/cust/genratebill"
+  //
+  // manager 
+  getBillsUrl = "http://localhost:8080/Project/manager/bills"
+  getOrderIdForSaleReportUrl = "http://localhost:8080/Project/manager/getorderidhd"
+  getOrderAmtForSaleReportUrl = "http://localhost:8080/Project/manager/getorderid/"
+  getOrderIdForDineInSaleReportUrl = "http://localhost:8080/Project/manager/getorderiddi"
+  //
+  // waiter 
+  getOrderIdWaiterUrl = "http://localhost:8080/Project/waiter/setorder"
+  addOrderDetailsWaiterUrl = "http://localhost:8080/Project/waiter/addorderdetails/"
   //
   constructor(public http: HttpClient) { }
-  // start admin
-  addMenuItems(menuObj)
-  {
-    //debugger
-    //console.log(menuObj)
-    return this.http.post(this.addMenuUrl,menuObj);
+  // start waiter
+  getOrderIdWaiter() {
+    return this.http.get(this.getOrderIdWaiterUrl);
   }
-  showEmp()
-  {
+  addOrderDetailsWaiter(detailsObj) {
+    return this.http.post(this.addOrderDetailsWaiterUrl, detailsObj);
+  }
+  //
+  // start admin
+  addMenuItems(menuObj) {
+    return this.http.post(this.addMenuUrl, menuObj);
+  }
+  showEmp() {
     return this.http.get(this.showEmpUrl);
   }
-  getEmpById(id)
-  {
+  getEmpById(id) {
     return this.http.get(this.getEmpByIdUrl + id);
   }
-  showCust()
-  {
+  showCust() {
     return this.http.get(this.showCustUrl);
   }
-  getCustOrderDtlById(id)
-  {
+  getCustOrderDtlById(id) {
     return this.http.get(this.getCustOrderDtlByIdUrl + id);
   }
-  getCustReservationsDtlById(id)
-  {
+  getCustReservationsDtlById(id) {
     return this.http.get(this.getCustReservationDtlByIdUrl + id);
+  }
+  getCurrentTableCount() {
+    return this.http.get(this.getCurrentTableCountUrl);
+  }
+  addTable(tableObj) {
+    return this.http.post(this.addTableUrl, tableObj);
+  }
+  getOrderDetails(id) {
+    return this.http.get(this.getOrderDetailsUrl + id);
+  }
+  addEmp(empObj, role) {
+    return this.http.post(this.addEmpUrl + role, empObj);
   }
   //
   // Auth
   checkLoginCredentailsWithDB(custObj) {
     return this.http.post(this.authCustomerUrl, custObj);
   }
-  checkLoginCredentailsWithDBForEmp(empObj)
-  {
+  checkLoginCredentailsWithDBForEmp(empObj) {
     return this.http.post(this.authEmpUrl, empObj);
   }
   //
@@ -103,15 +129,17 @@ export class DataService {
   getOrderId(id) {
     return this.http.get(this.getOrderIdUrl + id);
   }
-  addOrderDetails(detailsObj,id){
-    return this.http.post(this.addOrderDetailsUrl + id,detailsObj);
+  addOrderDetails(detailsObj, id) {
+    return this.http.post(this.addOrderDetailsUrl + id, detailsObj);
   }
-  generateBill(billObj)
-  {
-    //console.log(billObj)
-    return this.http.post(this.generateBillUrl,billObj);
+  generateBill(billObj) {
+    return this.http.post(this.generateBillUrl, billObj);
+  }
+  getOrderDetailsForCust(id) {
+    return this.http.get(this.getOrderDetailsUrl + id);
   }
   // end Customer
+  // start waiter
   getTables() {
     return this.http.get(this.tablesUrl);
   }
@@ -121,11 +149,24 @@ export class DataService {
   }
 
   goToTable(id) {
-
   }
 
   getOnlineOrderStatus() {
     return this.http.get(this.orderStatusUrl);
   }
-
+  //
+  // manager start
+  getBills() {
+    return this.http.get(this.getBillsUrl);
+  }
+  getOrderIdForHomeDeliverySaleReport() {
+    return this.http.get(this.getOrderIdForSaleReportUrl);
+  }
+  getOrderIdForDineInSaleReport() {
+    return this.http.get(this.getOrderIdForDineInSaleReportUrl);
+  }
+  getOrderAmtForSaleReport(id) {
+    return this.http.get(this.getOrderAmtForSaleReportUrl + id);
+  }
+  //
 }

@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 style="font-family: monospace;text-align: center;color: black" >Order Details</h2>
+    <h3 style="font-family: monospace;color: black" >Customer Name: {{name}} From {{city}}</h3>
+    <div class="container" style="background-color: black">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Ordered Quantity</th>
+                    <th>Per Item Price</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of result">
+                    <td>{{item.itemId.itemDesc}}</td>
+                    <td>{{item.orderItemQty}}</td>
+                    <td>{{item.itemId.itemPrice}}</td>
+                    <td>{{item.orderItemAmt}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h3 style="font-family: monospace;color: black" >Order Total: {{orderTotal}}</h3>
+</div>
+

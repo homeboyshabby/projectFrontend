@@ -3,8 +3,8 @@
     <form #myForm="ngForm" (ngSubmit)="onAddItem(myForm)">
         <div class="form-group">
             <h3 style="font-family: monospace;color: black">Name</h3>
-            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="itemDesc" name="itemDesc"
-                    placeholder="Enter Item Name"></span>
+            <span><input autofocus style="width: 500px" ngModel type="text" class="form-control" id="itemDesc"
+                    name="itemDesc" placeholder="Enter Item Name"></span>
         </div>
         <div class="form-group">
             <h3 style="font-family: monospace;color: black">Description</h3>
@@ -31,7 +31,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let item of menu">
-                    <td><a>{{item.itemId}}</a></td>
+                    <td>{{item.itemId}}</td>
                     <td>{{item.itemDesc}}</td>
                     <td>{{item.itemName}}</td>
                     <td>{{item.itemPrice}}</td>

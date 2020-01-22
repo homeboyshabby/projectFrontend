@@ -1,28 +1,30 @@
 import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements CanActivate {
+  constructor(private router: Router) { }
 
-  constructor() { }
-  
-  authenticate(username, password) {
-    if (username === "javainuse" && password === "password") {
-      sessionStorage.setItem('username', username)
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (this.isUserLoggedIn()) {
       return true;
-    } else {
+    }
+    else {
+      alert("not authorized!")
+      this.router.navigate(['/home/login']);
       return false;
     }
   }
 
   isUserLoggedIn() {
-    let user = sessionStorage.getItem('username')
-    console.log(!(user === null))
-    return !(user === null)
-  }
-
-  logOut() {
-    sessionStorage.removeItem('username')
+    let role = sessionStorage.getItem('role')
+    if (role === 'c') {
+      if (sessionStorage.getItem('c_login_status')) {
+        return true;
+      }
+    }
+    return false;
   }
 }

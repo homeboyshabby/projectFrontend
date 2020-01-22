@@ -1,1 +1,25 @@
-<p>bills works!</p>
+<div>
+    <h2 style="font-family: monospace;text-align: center;color: black">Menu List</h2>
+    <div class="container" style="background-color: black">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+            <thead>
+                <tr>
+                    <th>Bill Id</th>
+                    <th>Bill Date</th>
+                    <th>Bill Discount</th>
+                    <th>Bill Amount</th>
+                    <th>Bill Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of bills">
+                    <td>{{item.billId}}</td>
+                    <td>{{item.billDate}}</td>
+                    <td>{{item.billDisc}}</td>
+                    <td>{{item.billAmt}}</td>
+                    <td>{{item.order.orderType}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

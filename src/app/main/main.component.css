@@ -26,8 +26,8 @@ html {
 } */
 
 .image{
-    height:90em; 
-    background-image:url("../../assets/main2.jpg");
+    height:65em; 
+    background-image:url("../../assets/alcohol-architecture-bar-beer-260922.jpg");
     background-position: 90% center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -81,7 +81,12 @@ html {
 }
 
 #down {
-    background-color: black;
+    height: 82em;
+    background-image: url("../../assets/sea-shore-view-on-sunset-130879.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0%;
 }
 
 #second2 {

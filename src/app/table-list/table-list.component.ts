@@ -7,19 +7,22 @@ import { DataService } from '../data.service';
   styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements OnInit {
-  tables:any;
+  tables: any;
+  count = 0;
+  refreshCount = 0;
   constructor(private service: DataService) { }
 
   ngOnInit() {
+    sessionStorage.setItem("rcount", this.refreshCount.toString())
+    sessionStorage.setItem("wcount", this.count.toString());
     let obs = this.service.getTables();
 
-    obs.subscribe((res)=>{
+    obs.subscribe((res) => {
       this.tables = res;
     })
   }
-  goToTakeOrder(id)
-  {
-    
+  goToTakeOrder(id) {
+
   }
 
 }

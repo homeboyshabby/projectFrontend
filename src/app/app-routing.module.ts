@@ -29,41 +29,56 @@ import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
 import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails.component';
 import { ShowBillsComponent } from './show-bills/show-bills.component';
+import { ShowSelectedOrderComponent } from './show-selected-order/show-selected-order.component';
+import { ManagerTablelistComponent } from './manager-tablelist/manager-tablelist.component';
+import { ShoworderDetailsComponent } from './showorder-details/showorder-details.component';
+import { AddEmpComponent } from './add-emp/add-emp.component';
+import { WaiterBillComponent } from './waiter-bill/waiter-bill.component';
+import { AuthService } from './auth.service';
+import { WaiterAuthService } from './waiter-auth.service';
+import { AdminAuthService } from './admin-auth.service';
+import { ManagerAuthService } from './manager-auth.service';
 
 const routes: Routes = [
-  //{path:"",component:LoginComponent}, getcust
-  {path:"",component:HomeComponent,children:[{path:"",component:MainComponent}]},
-  {path:"home",component:HomeComponent,children:[{path:"login",component:LoginComponent}]},
-  {path:"home",component:HomeComponent,children:[{path:"onlineorder",component:OrderOnlineComponent}]},
-  {path:"home",component:HomeComponent,children:[{path:"menu",component:MenuListComponent}]},
-  {path:"home",component:HomeComponent,children:[{path:"employee",component:EmpLoginComponent}]},
-  {path:"home",component:HomeComponent,children:[{path:"register",component:RegisterComponent}]},
-  {path:"waiter",component:WaiterComponent,children:[{path:"menu",component:MenuListComponent}]},
-  {path:"waiter",component:WaiterComponent,children:[{path:"table",component:TableListComponent}]},
-  {path:"waiter",component:WaiterComponent,children:[{path:"order",component:TakeOrderComponent}]},
-  {path:"waiter",component:WaiterComponent,children:[{path:"bills",component:BillsComponent}]},
-  {path:"waiter",component:WaiterComponent,children:[{path:"menu/:id",component:TakeOrderComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"onlineorder",component:OnlineOrderComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"addmenu",component:AddMenuComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"addtables",component:AddTablesComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"updateemp",component:UpdateEmpComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"updateemp/:id",component:EditEmpComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"customers",component:AdminCustomersComponent}]},
-  {path:"admin",component:AdminComponent,children:[{path:"getdetails/:id",component:AdminCustdetailsComponent}]},
-  {path:"manager",component:ManagerComponent},
-  {path:"manager",component:ManagerComponent,children:[{path:"menu",component:MenuListComponent}]},
-  {path:"manager",component:ManagerComponent,children:[{path:"table",component:TableListComponent}]},
-  {path:"manager",component:ManagerComponent,children:[{path:"order",component:TakeOrderComponent}]},
-  {path:"manager",component:ManagerComponent,children:[{path:"bills",component:BillsComponent}]},
-  {path:"manager",component:ManagerComponent,children:[{path:"dailysalereport",component:ManagerDailyreportComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"",component:CustomerOrdersComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"orderdetails/:id",component:CustomerOrderdetailsComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"myreservations",component:CustomerReservationsComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"editmyprofile",component:CustomerEditprofileComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"changepassword",component:CustomerChangepasswordComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"reservations",component:ReservationsComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"onlineorder",component:OrderOnlineComponent}]},
-  {path:"customer",component:CustomerComponent,children:[{path:"bills",component:ShowBillsComponent}]},
+  { path: "", component: HomeComponent, children: [{ path: "", component: MainComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "login", component: LoginComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "onlineorder", component: OrderOnlineComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "menu", component: MenuListComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "employee", component: EmpLoginComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "register", component: RegisterComponent }] },
+  //
+  { path: "waiter", component: WaiterComponent, children: [{ path: "", component: MenuListComponent }], canActivate: [WaiterAuthService] },
+  { path: "waiter", component: WaiterComponent, children: [{ path: "table", component: TableListComponent }], canActivate: [WaiterAuthService] },
+  { path: "waiter", component: WaiterComponent, children: [{ path: "order", component: TakeOrderComponent }], canActivate: [WaiterAuthService] },
+  { path: "waiter", component: WaiterComponent, children: [{ path: "bill", component: WaiterBillComponent }], canActivate: [WaiterAuthService] },
+  { path: "waiter", component: WaiterComponent, children: [{ path: "showorder", component: ShowSelectedOrderComponent }], canActivate: [WaiterAuthService] },
+  { path: "waiter", component: WaiterComponent, children: [{ path: "bills", component: BillsComponent }], canActivate: [WaiterAuthService] },
+  { path: "waiter", component: WaiterComponent, children: [{ path: "menu/:id", component: TakeOrderComponent }], canActivate: [WaiterAuthService] },
+  //
+  { path: "admin", component: AdminComponent, children: [{ path: "", component: OnlineOrderComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "addmenu", component: AddMenuComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "addtables", component: AddTablesComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "showorderdetails/:id", component: ShoworderDetailsComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "updateemp", component: UpdateEmpComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "updateemp/:id", component: EditEmpComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "customers", component: AdminCustomersComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "getdetails/:id", component: AdminCustdetailsComponent }], canActivate: [AdminAuthService] },
+  { path: "admin", component: AdminComponent, children: [{ path: "addemp", component: AddEmpComponent }], canActivate: [AdminAuthService] },
+  //
+  { path: "manager", component: ManagerComponent, children: [{ path: "", component: MenuListComponent }], canActivate: [ManagerAuthService] },
+  { path: "manager", component: ManagerComponent, children: [{ path: "table", component: ManagerTablelistComponent }], canActivate: [ManagerAuthService] },
+  { path: "manager", component: ManagerComponent, children: [{ path: "order", component: TakeOrderComponent }], canActivate: [ManagerAuthService] },
+  { path: "manager", component: ManagerComponent, children: [{ path: "bills", component: BillsComponent }], canActivate: [ManagerAuthService] },
+  { path: "manager", component: ManagerComponent, children: [{ path: "dailysalereport", component: ManagerDailyreportComponent }], canActivate: [ManagerAuthService] },
+  //
+  { path: "customer", component: CustomerComponent, children: [{ path: "", component: CustomerOrdersComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "orderdetails/:id", component: CustomerOrderdetailsComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "myreservations", component: CustomerReservationsComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "editmyprofile", component: CustomerEditprofileComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "changepassword", component: CustomerChangepasswordComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "reservations", component: ReservationsComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "onlineorder", component: OrderOnlineComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "bills", component: ShowBillsComponent }], canActivate: [AuthService] },
 ];
 
 @NgModule({

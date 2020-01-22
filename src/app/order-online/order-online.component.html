@@ -3,7 +3,6 @@
     <form #myForm="ngForm" (ngSubmit)="takeOnlineOrder(myForm)">
         <h3 style="font-family: monospace;color: black">Select Item </h3>
         <div class="form-group">
-            <!-- <label for="menulist">Menu</label> ngModel [ngModelOptions]="{standalone: true}" -->
             <select (change)="checkItem($event)" style="font-family: monospace;color: black" class="form-control"
                 id="menulist">
                 <option id="{{item.itemId}}" class="selectId" *ngFor="let item of menu">{{item.itemDesc}}</option>
@@ -37,5 +36,6 @@
             </tbody>
         </table>
     </div>
-    <button (click)="onPlaceOrder()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Place Order</button>
+    <button (click)="onPlaceOrder()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Place
+        Order</button>
 </div>

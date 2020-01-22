@@ -9,7 +9,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let item of orderStatus">
-                <td><a>{{item.orderId}}</a></td>
+                <td><a routerLink="/admin/showorderdetails/{{item.orderId}}">{{item.orderId}}</a></td>
                 <td>{{item.orderType}}</td>
             </tr>
         </tbody>

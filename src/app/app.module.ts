@@ -34,6 +34,11 @@ import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { AdminCustomersComponent } from './admin-customers/admin-customers.component';
 import { AdminCustdetailsComponent } from './admin-custdetails/admin-custdetails.component';
 import { ShowBillsComponent } from './show-bills/show-bills.component';
+import { ShowSelectedOrderComponent } from './show-selected-order/show-selected-order.component';
+import { ManagerTablelistComponent } from './manager-tablelist/manager-tablelist.component';
+import { ShoworderDetailsComponent } from './showorder-details/showorder-details.component';
+import { AddEmpComponent } from './add-emp/add-emp.component';
+import { WaiterBillComponent } from './waiter-bill/waiter-bill.component';
 
 
 @NgModule({
@@ -68,7 +73,12 @@ import { ShowBillsComponent } from './show-bills/show-bills.component';
     EditEmpComponent,
     AdminCustomersComponent,
     AdminCustdetailsComponent,
-    ShowBillsComponent
+    ShowBillsComponent,
+    ShowSelectedOrderComponent,
+    ManagerTablelistComponent,
+    ShoworderDetailsComponent,
+    AddEmpComponent,
+    WaiterBillComponent
   ],
   imports: [
     BrowserModule,

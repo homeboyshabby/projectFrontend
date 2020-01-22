@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-update-emp',
@@ -7,14 +8,15 @@ import { DataService } from '../data.service';
   styleUrls: ['./update-emp.component.css']
 })
 export class UpdateEmpComponent implements OnInit {
-  emps:any;
-  constructor(private service:DataService) { }
+  emps: any;
+  constructor(private service: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.service.showEmp().subscribe((res)=>{
+    this.service.showEmp().subscribe((res) => {
       this.emps = res;
-      console.log(this.emps)
     })
   }
-
+  goToAddEmp() {
+    this.router.navigate(['/admin/addemp']);
+  }
 }

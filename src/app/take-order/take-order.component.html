@@ -1,20 +1,100 @@
-<h2 style="font-family: monospace;text-align: center;color: black">Take Order</h2>
 <div class="container">
-    <form>
+    <h2 style="font-family: monospace;text-align: center;color: black">Take Order</h2>
+    <form #myForm="ngForm" (ngSubmit)="takeOnlineOrder(myForm)">
+        <h3 style="font-family: monospace;color: black">Table Id : </h3>
+        <div class="form-group">
+            <span><input readonly style="width: 500px" type="text" class="form-control" id="No" name="No" value={{id}}
+                    placeholder="Enter Table Id"></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Select Item </h3>
+        <div class="form-group">
+            <select (change)="checkItem($event)" style="font-family: monospace;color: black" class="form-control"
+                id="menulist">
+                <option id="{{item.itemId}}" class="selectId" *ngFor="let item of menu">{{item.itemDesc}}</option>
+            </select>
+        </div>
+        <h3 style="font-family: monospace;color: black">Quantity </h3>
+        <div class="form-group">
+            <span><input autofocus style="width: 500px" ngModel type="number" min="1" class="form-control" id="itemQty"
+                    name="itemQty" placeholder="Quantity"></span>
+        </div>
+        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Add Item</button>
+    </form>
+    <h2 style="font-family: monospace;text-align: center;color: black">Added Menu</h2>
+    <div class="jumbotron" style="background-color: black; margin-top:10px">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Unit Price</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of arr">
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.itemQty}}</td>
+                    <td>{{item.itemPrice}}</td>
+                    <td>{{item.itemTotal}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button (click)="onPlaceOrder()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Place
+        Order</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h2 style="font-family: monospace;text-align: center;color: black">Take Order</h2>
+<div class="container">
+    <form #myForm="ngForm" (ngSubmit)="addItem(myForm)">
         <h3 style="font-family: monospace;color: black">Enter Table Id : </h3>
         <div class="form-group">
-            <span><input readonly style="width: 500px" type="text" class="form-control" id="No" name="No"
-                   value={{id}} placeholder="Enter Table Id"></span>
+            <span><input readonly style="width: 500px" type="text" class="form-control" id="No" name="No" value={{id}}
+                    placeholder="Enter Table Id"></span>
         </div>
         <h3 style="font-family: monospace;color: black">Check Food For Order</h3>
         <div *ngFor="let item of menus">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <input (change)="checkItem($event)" id="{{item.itemDesc}}" class="form-check-input" type="checkbox"
+                    value="" id="defaultCheck1">
                 <label style="font-family: monospace;color: black" class="form-check-label" for="defaultCheck1">&nbsp;
                     {{item.itemDesc}}
                 </label>
             </div>
         </div>
-        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Submit Order</button>
+        <button (click)="placeOrder()" style="margin-top: 5px;font-size: 30px" type="submit"
+            class="btn btn-success">Submit Order</button>
     </form>
 </div>
+<router-outlet></router-outlet> -->

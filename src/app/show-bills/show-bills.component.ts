@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show-bills',
@@ -10,27 +11,27 @@ export class ShowBillsComponent implements OnInit {
   count = 0;
   arr = [];
   totalBill = 0;
-  bill:any;
-  constructor(private service:DataService) { }
+  bill: any;
+  c = 0;
+  constructor(private service: DataService, private router: Router) { }
 
   ngOnInit() {
-    this.count=parseInt(sessionStorage.getItem("count"));
+    this.count = parseInt(sessionStorage.getItem("count"));
     for (let i = 0; i < this.count; i++) {
       this.arr[i] = JSON.parse(sessionStorage.getItem(i.toString()));
-      console.log(this.arr[i]);
       this.totalBill = this.totalBill + this.arr[i].itemTotal;
     }
-    //console.log(this.totalBill)
   }
-  onPay()
-  {
+  onPay() {
     this.bill = {
-      "billAmt":this.totalBill,
+      "billAmt": this.totalBill,
       "order": JSON.parse(sessionStorage.getItem("orderId")).orderId
     }
-    console.log(this.bill)
-    this.service.generateBill(this.bill).subscribe((res)=>{
-      console.log(res)
+    this.service.generateBill(this.bill).subscribe((res) => {
     })
+    alert("Bill Paid Successfully!")
+    sessionStorage.setItem("count", this.c.toString())
+    this.router.navigate(['/customer/']);
   }
+
 }

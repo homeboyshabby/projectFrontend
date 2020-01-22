@@ -8,14 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-emp.component.css']
 })
 export class EditEmpComponent implements OnInit {
-  emp:any;
-  constructor(private service:DataService,private route:ActivatedRoute) { }
+  emp: any;
+  constructor(private service: DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     console.log(this.route.snapshot.paramMap.get("id"))
-    this.service.getEmpById(this.route.snapshot.paramMap.get("id")).subscribe((res)=>{
+    this.service.getEmpById(this.route.snapshot.paramMap.get("id")).subscribe((res) => {
       this.emp = res;
-      console.log(this.emp);
     })
   }
 

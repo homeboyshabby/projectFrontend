@@ -8,14 +8,13 @@ import { Router } from '@angular/router';
 })
 export class WaiterComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  onLogout()
-  {
-    //console.log("hi")
+  onLogout() {
+    sessionStorage.clear()
     this.router.navigate(['/']);
   }
 

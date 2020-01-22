@@ -7,21 +7,21 @@ import { DataService } from '../data.service';
   styleUrls: ['./customer-editprofile.component.css']
 })
 export class CustomerEditprofileComponent implements OnInit {
-  customer = 
-  {
-    "id":"",
-    "name":"",
-    "address":{
-      "flatNo":"",
-      "buildingName":"",
-      "area":"",
-      "city":""
-    },
-    "email":"",
-    "password":"",
-    "newpassword":"",
-    "phoneNumber":""
-  }
+  customer =
+    {
+      "id": "",
+      "name": "",
+      "address": {
+        "flatNo": "",
+        "buildingName": "",
+        "area": "",
+        "city": ""
+      },
+      "email": "",
+      "password": "",
+      "newpassword": "",
+      "phoneNumber": ""
+    }
   user: any;
   constructor(private service: DataService) { }
 
@@ -29,13 +29,11 @@ export class CustomerEditprofileComponent implements OnInit {
     let obs = this.service.getMyProfile(parseInt(localStorage.getItem("id")));
 
     obs.subscribe((res) => {
-      console.log(res);
       this.user = res;
     })
   }
 
-  onEditProfile(formDate)
-  {
+  onEditProfile(formDate) {
     let custObj = formDate.form.value;
     this.customer.name = custObj.name;
     this.customer.email = custObj.email;
@@ -44,7 +42,7 @@ export class CustomerEditprofileComponent implements OnInit {
     this.customer.address.buildingName = custObj.buildingName;
     this.customer.address.area = custObj.area;
     this.customer.address.city = custObj.city;
-    this.service.setMyProfile(this.customer).subscribe((res)=>{
+    this.service.setMyProfile(this.customer).subscribe((res) => {
       alert("Profile Updated Successfully!")
     });
   }

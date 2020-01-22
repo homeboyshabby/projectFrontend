@@ -1,1 +1,16 @@
-<p>add-tables works!</p>
+<div class="container">
+    <h2 style="font-family: monospace;color: black">Current Table Count : {{currentTableCount}}</h2>
+    <form #myForm="ngForm" (ngSubmit)="onAddTable(myForm)">
+        <h3 style="font-family: monospace;color: black">Table Id </h3>
+        <div class="form-group">
+            <span><input readonly style="width: 500px" type="text" class="form-control" id="tableId" name="employeeName"
+                    value="{{nextId}}" placeholder="Id"></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">No Of Chairs </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="number" class="form-control" id="email" name="noOfChairs" ngModel
+                    placeholder="Chairs"></span>
+        </div>
+        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Add Table</button>
+    </form>
+</div>

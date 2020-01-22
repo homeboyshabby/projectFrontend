@@ -1,0 +1,35 @@
+<div class="container">
+    <h2 style="font-family: monospace;text-align: center;color: black">Add Employee</h2>
+    <form #myForm="ngForm" (ngSubmit)="onAddEmp(myForm)">
+        <h3 style="font-family: monospace;color: black">Name </h3>
+        <div class="form-group">
+            <span><input autofocus style="width: 500px" type="text" class="form-control" id="employeeName"
+                    name="employeeName" ngModel placeholder="Name"></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Email </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="email" class="form-control" id="email" name="employeeEmail" ngModel
+                    placeholder="Email"></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Phone Number </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="text" class="form-control" id="employeePhoneNumber"
+                    name="employeePhoneNumber" ngModel placeholder="Phone Number "></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Password </h3>
+        <div class="form-group">
+            <span><input style="width: 500px" type="text" class="form-control" id="employeePassword"
+                    name="employeePassword" ngModel placeholder="Password "></span>
+        </div>
+        <h3 style="font-family: monospace;color: black">Role </h3>
+        <div class="form-group">
+            <select style="font-family: monospace;color: black;width: 500px" class="form-control"
+                (change)="change($event)" name="role" id="menulist">
+                <option class="selectId">Select Role</option>
+                <option class="selectId">MANAGER</option>
+                <option class="selectId">WAITER</option>
+            </select>
+        </div>
+        <button style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>

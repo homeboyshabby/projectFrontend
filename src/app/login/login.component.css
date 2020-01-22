@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: black;
+    background-image: url("../../assets/cocktails-neon-signage-3566120.jpg")
   }
   .box{
     width: 400px;

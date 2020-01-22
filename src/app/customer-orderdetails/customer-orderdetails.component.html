@@ -1,21 +1,24 @@
 <div class="container">
     <h2 style="font-family: monospace;text-align: center;color: black">Order Details</h2>
-    <!-- <table *ngFor="let item of ordereditems">
-        <tr><h4 style="font-family: monospace;text-align: center;color: black">{{item.itemName}} x {{item.itemQty}}</h4></tr>
-    </table> -->
-    <div style="border: black 1px solid; border-radius: 40px">
-        <h4 style="font-family: monospace;text-align: center;color: black">Order Id : 1</h4>
-        <table>
-            <tr>
-                <h4 style="font-family: monospace;text-align: center;color: black">Panner x 2</h4>
-            </tr>
-            <tr>
-                <h4 style="font-family: monospace;text-align: center;color: black">Roti x 6</h4>
-            </tr>
-            <tr>
-                <h4 style="font-family: monospace;text-align: center;color: black">Sweet x 3</h4>
-            </tr>
+    <div class="container" style="background-color: black">
+        <table class="table" style="color: white;font-family: monospace;font-size: 20px">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Ordered Quantity</th>
+                    <th>Per Item Price</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of result">
+                    <td>{{item.itemId.itemDesc}}</td>
+                    <td>{{item.orderItemQty}}</td>
+                    <td>{{item.itemId.itemPrice}}</td>
+                    <td>{{item.orderItemAmt}}</td>
+                </tr>
+            </tbody>
         </table>
-        <h4 style="font-family: monospace;text-align: center;color: black">Total Amount : Rs 450</h4>
     </div>
+    <h3 style="font-family: monospace;color: black">Order Total: {{orderTotal}}</h3>
 </div>

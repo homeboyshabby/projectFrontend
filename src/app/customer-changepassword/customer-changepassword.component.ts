@@ -18,7 +18,6 @@ export class CustomerChangepasswordComponent implements OnInit {
   }
   onChangePassword(formDate) {
     let custObj = formDate.form.value;
-    //console.log(custObj)
     this.service.changeMyPassword(custObj).subscribe((res) => {
       alert("Password Changed Successfully!")
     });

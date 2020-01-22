@@ -7,13 +7,13 @@ import { DataService } from '../data.service';
   styleUrls: ['./online-order.component.css']
 })
 export class OnlineOrderComponent implements OnInit {
-  orderStatus:any;
-  constructor(private service:DataService) { }
+  orderStatus: any;
+  constructor(private service: DataService) { }
 
   ngOnInit() {
     let obs = this.service.getOnlineOrderStatus();
 
-    obs.subscribe((res)=>{
+    obs.subscribe((res) => {
       this.orderStatus = res;
     })
   }

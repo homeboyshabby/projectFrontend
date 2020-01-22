@@ -13,9 +13,8 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
-  onLogout()
-  {
-    //console.log("hi")
+  onLogout() {
+    sessionStorage.clear()
     this.router.navigate(['/']);
   }
 

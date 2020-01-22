@@ -11,10 +11,12 @@ export class EmpLoginComponent implements OnInit {
   email = '';
   password = '';
   user: any;
+  count = 0;
   constructor(private router: Router,
     private service: DataService) {
   }
   ngOnInit() {
+    sessionStorage.setItem("wcount", this.count.toString());
   }
   onLogin(entireData) {
     // debugger
@@ -28,19 +30,23 @@ export class EmpLoginComponent implements OnInit {
     } else {
       this.service.checkLoginCredentailsWithDBForEmp(empObj).subscribe((res) => {
         this.user = res;
-        console.log(this.user.role);
       })
 
       if (this.user.employeeEmail == this.email) {
-        sessionStorage['login_status'] = '1';
         localStorage.setItem('email', empObj.email);
         localStorage.setItem('id', this.user.id);
         localStorage.setItem('flag', 'true');
         if (this.user.role == "WAITER") {
+          sessionStorage['w_login_status'] = '1';
+          sessionStorage['role'] = 'w';
           this.router.navigate(['/waiter']);
         } else if (this.user.role == "MANAGER") {
+          sessionStorage['m_login_status'] = '1';
+          sessionStorage['role'] = 'm';
           this.router.navigate(['/manager']);
         } else if (this.user.role == "ADMIN") {
+          sessionStorage['a_login_status'] = '1';
+          sessionStorage['role'] = 'a';
           this.router.navigate(['/admin']);
         }
       }
