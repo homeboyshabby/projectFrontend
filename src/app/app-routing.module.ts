@@ -71,7 +71,8 @@ const routes: Routes = [
   { path: "manager", component: ManagerComponent, children: [{ path: "bills", component: BillsComponent }], canActivate: [ManagerAuthService] },
   { path: "manager", component: ManagerComponent, children: [{ path: "dailysalereport", component: ManagerDailyreportComponent }], canActivate: [ManagerAuthService] },
   //
-  { path: "customer", component: CustomerComponent, children: [{ path: "", component: CustomerOrdersComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "", component: MenuListComponent }], canActivate: [AuthService] },
+  { path: "customer", component: CustomerComponent, children: [{ path: "orders", component: CustomerOrdersComponent }], canActivate: [AuthService] },
   { path: "customer", component: CustomerComponent, children: [{ path: "orderdetails/:id", component: CustomerOrderdetailsComponent }], canActivate: [AuthService] },
   { path: "customer", component: CustomerComponent, children: [{ path: "myreservations", component: CustomerReservationsComponent }], canActivate: [AuthService] },
   { path: "customer", component: CustomerComponent, children: [{ path: "editmyprofile", component: CustomerEditprofileComponent }], canActivate: [AuthService] },

@@ -16,12 +16,13 @@
         </button>
       </div> 
       <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a routerLink="/customer">My Orders</a></li>
+        <ul class="nav navbar-nav"> 
+            <li><a routerLink="/customer">Menu List</a></li>
+          <li><a routerLink="/customer/orders">My Orders</a></li>
           <li><a routerLink="/customer/myreservations">My Reservations</a></li>
           <li><a routerLink="/customer/editmyprofile">Edit Profile</a></li>
           <li><a routerLink="/customer/changepassword">Change Password</a></li>
-          <li><a routerLink="/customer/reservations">Add Reservation</a></li>
+          <li><a routerLink="/customer/reservations">Reservation</a></li>
           <li><a routerLink="/customer/onlineorder">Order Online</a></li>
         </ul>
       </div>
@@ -30,4 +31,7 @@
   <button (click)="onLogout()" style="font-size: 20px;float: right;" type="submit" class="btn btn-danger">Logout</button>
 </body>
 </html>
+<div class="container">
+    <h2 style="font-family: monospace;color: black"> Hi {{name}}!</h2>
+</div>
 <router-outlet></router-outlet>

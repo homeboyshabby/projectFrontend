@@ -22,5 +22,7 @@
         </table>
     </div>
     <h3 style="font-family: monospace;color: black" >Order Total: {{orderTotal}}</h3>
+    <h3 style="font-family: monospace;color: black" >GST (5%): {{orderTotal * 0.05}}</h3>
+    <h3 style="font-family: monospace;color: black" >Payable Amount: {{orderTotal + (orderTotal * 0.05)}}</h3>
 </div>
 

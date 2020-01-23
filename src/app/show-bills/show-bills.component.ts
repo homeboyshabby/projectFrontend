@@ -31,7 +31,7 @@ export class ShowBillsComponent implements OnInit {
     })
     alert("Bill Paid Successfully!")
     sessionStorage.setItem("count", this.c.toString())
-    this.router.navigate(['/customer/']);
+    this.router.navigate(['/customer/orders']);
   }
 
 }

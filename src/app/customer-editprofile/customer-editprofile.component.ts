@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-editprofile',
@@ -23,13 +24,14 @@ export class CustomerEditprofileComponent implements OnInit {
       "phoneNumber": ""
     }
   user: any;
-  constructor(private service: DataService) { }
+  constructor(private service: DataService, private router: Router) { }
 
   ngOnInit() {
     let obs = this.service.getMyProfile(parseInt(localStorage.getItem("id")));
 
     obs.subscribe((res) => {
       this.user = res;
+      console.log(this.user)
     })
   }
 
@@ -43,7 +45,8 @@ export class CustomerEditprofileComponent implements OnInit {
     this.customer.address.area = custObj.area;
     this.customer.address.city = custObj.city;
     this.service.setMyProfile(this.customer).subscribe((res) => {
-      alert("Profile Updated Successfully!")
     });
+    alert("Profile Updated Successfully!")
+    this.router.navigate(['/customer/editmyprofile']);
   }
 }

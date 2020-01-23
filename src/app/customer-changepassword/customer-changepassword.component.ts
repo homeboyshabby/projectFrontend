@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-changepassword',
@@ -8,7 +9,7 @@ import { DataService } from '../data.service';
 })
 export class CustomerChangepasswordComponent implements OnInit {
   user: any;
-  constructor(private service: DataService) { }
+  constructor(private service: DataService,private router:Router) { }
 
   ngOnInit() {
     let obs = this.service.getMyProfile(parseInt(localStorage.getItem("id")));
@@ -19,7 +20,8 @@ export class CustomerChangepasswordComponent implements OnInit {
   onChangePassword(formDate) {
     let custObj = formDate.form.value;
     this.service.changeMyPassword(custObj).subscribe((res) => {
-      alert("Password Changed Successfully!")
     });
+    alert("Password Changed Successfully!")
+    this.router.navigate(['/customer/changepassword']);
   }
 }
