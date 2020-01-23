@@ -12,10 +12,10 @@ export class CustomerComponent implements OnInit {
   constructor(private router: Router,private service:DataService) { }
 
   ngOnInit() {
-    this.service.getMyProfile(parseInt(localStorage.getItem("id"))).subscribe((res)=>{
-      this.userDtls = res;
-      this.name = this.userDtls.name;
-    })
+    // this.service.getMyProfile(parseInt(localStorage.getItem("id"))).subscribe((res)=>{
+    //   this.userDtls = res;
+    //   this.name = this.userDtls.name;
+    // })
   }
 
   onLogout() {

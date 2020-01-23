@@ -5,17 +5,23 @@
             <thead>
                 <tr>
                     <th>Order Type</th>
-                    <th>Amount</th>
+                    <th>Total Amount</th>
+                    <th>GST Amount</th>
+                    <th>Payable Amount</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Home Delivery Orders</td>
                     <td>{{totalForHomeDelivery}}</td>
+                    <td>{{totalForHomeDelivery * 0.05}}</td>
+                    <td>{{totalForHomeDelivery + (totalForHomeDelivery * 0.05)}}</td>
                 </tr>
                 <tr>
                     <td>Dine-In Orders</td>
                     <td>{{totalForDineIn}}</td>
+                    <td>{{totalForDineIn * 0.05}}</td>
+                    <td>{{totalForDineIn + (totalForDineIn * 0.05)}}</td>
                 </tr>
             </tbody>
         </table>

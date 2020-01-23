@@ -20,6 +20,7 @@ export class DataService {
   addTableUrl = "http://localhost:8080/Project/admin/addtable"
   getOrderDetailsUrl = "http://localhost:8080/Project/admin/getorderdetails/"
   addEmpUrl = "http://localhost:8080/Project/admin/addemp/"
+  changeOrderStatusUrl = "http://localhost:8080/Project/admin/changeorderstatus/"
   //
   //auth
   authCustomerUrl = "http://localhost:8080/Project/auth/cust"
@@ -88,6 +89,9 @@ export class DataService {
   }
   addEmp(empObj, role) {
     return this.http.post(this.addEmpUrl + role, empObj);
+  }
+  changeOrderStatus(id) {
+    return this.http.get(this.changeOrderStatusUrl + id);
   }
   //
   // Auth

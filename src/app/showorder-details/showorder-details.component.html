@@ -1,6 +1,6 @@
 <div class="container">
     <h2 style="font-family: monospace;text-align: center;color: black" >Order Details</h2>
-    <h3 style="font-family: monospace;color: black" >Customer Name: {{name}} From {{city}}</h3>
+    <h3 *ngIf="name != ''" style="font-family: monospace;color: black" >Customer Name: {{name}} From {{city}}</h3>
     <div class="container" style="background-color: black">
         <table class="table" style="color: white;font-family: monospace;font-size: 20px">
             <thead>

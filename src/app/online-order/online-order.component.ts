@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-online-order',
@@ -8,7 +9,8 @@ import { DataService } from '../data.service';
 })
 export class OnlineOrderComponent implements OnInit {
   orderStatus: any;
-  constructor(private service: DataService) { }
+  clicked = false;
+  constructor(private service: DataService,private router:Router) { }
 
   ngOnInit() {
     let obs = this.service.getOnlineOrderStatus();
@@ -16,6 +18,16 @@ export class OnlineOrderComponent implements OnInit {
     obs.subscribe((res) => {
       this.orderStatus = res;
     })
+  }
+  changeStatus(id)
+  {
+    this.service.changeOrderStatus(id).subscribe((res)=>{
+      console.log(res);
+    })
+    alert("Order Status Changed Successfully!")
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/admin/']);
+    });
   }
 
 }

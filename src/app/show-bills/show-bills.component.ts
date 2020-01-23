@@ -21,8 +21,6 @@ export class ShowBillsComponent implements OnInit {
       this.arr[i] = JSON.parse(sessionStorage.getItem(i.toString()));
       this.totalBill = this.totalBill + this.arr[i].itemTotal;
     }
-  }
-  onPay() {
     this.bill = {
       "billAmt": this.totalBill,
       "order": JSON.parse(sessionStorage.getItem("orderId")).orderId
@@ -33,5 +31,17 @@ export class ShowBillsComponent implements OnInit {
     sessionStorage.setItem("count", this.c.toString())
     this.router.navigate(['/customer/orders']);
   }
+  onPay() {
+    //   this.bill = {
+    //     "billAmt": this.totalBill,
+    //     "order": JSON.parse(sessionStorage.getItem("orderId")).orderId
+    //   }
+    //   this.service.generateBill(this.bill).subscribe((res) => {
+    //   })
+    //   alert("Bill Paid Successfully!")
+    //   sessionStorage.setItem("count", this.c.toString())
+    //   this.router.navigate(['/customer/orders']);
+    // }
 
+  }
 }

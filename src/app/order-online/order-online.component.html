@@ -36,6 +36,9 @@
             </tbody>
         </table>
     </div>
+    <h2 style="font-family: monospace;color: black">Order Total : {{itemTotal}}</h2>
+    <h2 style="font-family: monospace;color: black">GST(5%) : {{itemTotal * 0.05}}</h2>
+    <h2 style="font-family: monospace;color: black">Payable Total : {{itemTotal + (itemTotal * 0.05)}}</h2>
     <button (click)="onPlaceOrder()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Place
-        Order</button>
+        Order And Pay Bill</button>
 </div>

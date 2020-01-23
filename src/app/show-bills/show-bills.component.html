@@ -21,5 +21,7 @@
         </table>
     </div>
     <h2 style="font-family: monospace;color: black">Total Bill : {{totalBill}}</h2>
-    <button (click)="onPay()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Pay Bill</button>
+    <h2 style="font-family: monospace;color: black">GST(5%) : {{totalBill * 0.05}}</h2>
+    <h2 style="font-family: monospace;color: black">Payable Bill : {{totalBill + (totalBill * 0.05)}}</h2>
+    <button (click)="onPay()" style="margin-top: 5px;font-size: 30px" type="submit" class="btn btn-success">Go To All Orders</button>
 </div>

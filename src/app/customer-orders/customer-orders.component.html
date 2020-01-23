@@ -7,6 +7,7 @@
                     <th>Order Id</th>
                     <th>Order Date</th>
                     <th>Order Type</th>
+                    <th>Order Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -15,6 +16,7 @@
                             routerLink="/customer/orderdetails/{{item.orderId}}">{{item.orderId}}</a></td>
                     <td>{{item.orderDate}}</td>
                     <td>{{item.orderType}}</td>
+                    <td>{{item.status}}</td>
                 </tr>
             </tbody>
         </table>

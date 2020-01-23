@@ -12,6 +12,7 @@ export class ShoworderDetailsComponent implements OnInit {
   orderTotal = 0;
   name = "";
   city = "";
+  orderType = "";
   arr = [];
   constructor(private service: DataService, private route: ActivatedRoute) { }
   ngOnInit() {
@@ -22,6 +23,7 @@ export class ShoworderDetailsComponent implements OnInit {
         this.orderTotal = this.orderTotal + this.arr[i].orderItemAmt
         this.name = this.arr[i].orderId.custId.name
         this.city = this.arr[i].orderId.custId.address.city
+        this.orderType = this.arr[i].orderId.orderType
       }
     })
   }

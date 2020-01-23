@@ -15,6 +15,7 @@ export class CustomerOrdersComponent implements OnInit {
 
     obs.subscribe((res) => {
       this.myOrder = res;
+      console.log(this.myOrder)
     })
   }
 
