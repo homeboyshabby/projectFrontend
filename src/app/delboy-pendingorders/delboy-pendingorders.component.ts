@@ -25,7 +25,7 @@ orders:any
     })
     alert("Order Status Changed Successfully!")
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/admin/']);
+      this.router.navigate(['/dboy/orders']);
     });
   }
 }

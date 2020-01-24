@@ -29,9 +29,10 @@ export class ShowBillsComponent implements OnInit {
     })
     alert("Bill Paid Successfully!")
     sessionStorage.setItem("count", this.c.toString())
-    this.router.navigate(['/customer/orders']);
+    
   }
   onPay() {
+    this.router.navigate(['/customer/orders']);
     //   this.bill = {
     //     "billAmt": this.totalBill,
     //     "order": JSON.parse(sessionStorage.getItem("orderId")).orderId

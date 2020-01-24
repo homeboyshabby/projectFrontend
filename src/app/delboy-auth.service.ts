@@ -19,6 +19,7 @@ export class DelboyAuthService implements CanActivate {
   }
 
   isUserLoggedIn() {
+    //debugger
     let role = sessionStorage.getItem('role')
     if (role === 'd') {
       if (sessionStorage.getItem('d_login_status')) {

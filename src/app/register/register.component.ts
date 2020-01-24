@@ -21,6 +21,11 @@ export class RegisterComponent implements OnInit {
       "password": "",
       "phoneNumber": ""
     }
+    emailObj = {
+      "destEmail":"",
+      "message":"",
+      "subject":""
+    }
   constructor(private service: DataService,
     private router: Router) { }
 
@@ -39,6 +44,14 @@ export class RegisterComponent implements OnInit {
       "password": formData.form.value.password,
       "phoneNumber": formData.form.value.phoneNumber
     }
+    this.emailObj = {
+      "destEmail":formData.form.value.email,
+      "message":"Welcome to Rosewood !" + formData.form.value.name + " Enjoy your time.",
+      "subject":"Welcome to Rosewood"
+    }
+    this.service.sendEmail(this.emailObj).subscribe((res)=>{
+      console.log(res)
+    })
     this.service.addCust(this.customer).subscribe((res) => {
       alert("Registration Done Successfully!")
       this.router.navigate(['/home/login'])

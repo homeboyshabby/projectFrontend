@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
 })
 // Project_demo_spring_hib_rest
 export class DataService {
+  //send email
+  sendEmailUrl = "http://localhost:8080/Project/email/"
+  //
   //admin 
   tablesUrl = "http://localhost:8080/Project/waiter/tables"
   menuUrl = "http://localhost:8080/Project/waiter/menu"
@@ -71,6 +74,13 @@ export class DataService {
     return this.http.get(this.changeOrderStatusDBoyUrl + id);
   }
   // end delivery boy
+  // email
+  sendEmail(emailObj)
+  {
+    //console.log(emailObj)
+    return this.http.post(this.sendEmailUrl, emailObj);
+  }
+  //
   // start waiter
   getOrderIdWaiter() {
     return this.http.get(this.getOrderIdWaiterUrl);
