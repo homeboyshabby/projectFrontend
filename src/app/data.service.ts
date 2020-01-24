@@ -50,7 +50,27 @@ export class DataService {
   getOrderIdWaiterUrl = "http://localhost:8080/Project/waiter/setorder"
   addOrderDetailsWaiterUrl = "http://localhost:8080/Project/waiter/addorderdetails/"
   //
+  // delivery boy 
+  getPendingOrdersUrl = "http://localhost:8080/Project/dboy/pendingorders"
+  getDeliveredOrdersUrl = "http://localhost:8080/Project/dboy/deliveredorders"
+  getAllOrdersUrl = "http://localhost:8080/Project/dboy/allorders"
+  changeOrderStatusDBoyUrl = "http://localhost:8080/Project/dboy/changeorderstatus/"
+  //
   constructor(public http: HttpClient) { }
+  // start delivery boy
+  getPendingOrders() {
+    return this.http.get(this.getPendingOrdersUrl);
+  }
+  getDeliveredOrders() {
+    return this.http.get(this.getDeliveredOrdersUrl);
+  }
+  getAllOrders() {
+    return this.http.get(this.getAllOrdersUrl);
+  }
+  changeOrderStatusDBoy(id) {
+    return this.http.get(this.changeOrderStatusDBoyUrl + id);
+  }
+  // end delivery boy
   // start waiter
   getOrderIdWaiter() {
     return this.http.get(this.getOrderIdWaiterUrl);

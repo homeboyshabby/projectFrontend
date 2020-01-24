@@ -10,14 +10,14 @@
             </tr>
         </thead>
         <tbody> 
-            <tr *ngFor="let item of orderStatus">
-                <td><a routerLink="/admin/showorderdetails/{{item.orderId}}">{{item.orderId}}</a></td>
+            <tr *ngFor="let item of orders">
+                <td>{{item.orderId}}</td>
                 <td>{{item.orderDate}}</td>
                 <td>{{item.orderType}}</td>
-                <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'PENDING'" ><button (click)="changeStatus(item.orderId)" type="submit" class="btn btn-danger">{{item.status}}</button></td>
+                <!-- <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'PENDING'" ><button (click)="changeStatus(item.orderId)" type="submit" class="btn btn-danger">{{item.status}}</button></td>
                 <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'DELIVERED'" ><button disabled type="submit" class="btn btn-success">{{item.status}}</button></td>
-                <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'OUTFORDELIVERY'" ><button disabled type="submit" class="btn btn-success">{{item.status}}</button></td>
-                <td *ngIf="item.orderType == 'DINEIN'" >No Status</td>
+                <td *ngIf="item.orderType == 'DINEIN'" >No Status</td> -->
+                <td>{{item.status}}</td>
             </tr>
         </tbody>
     </table>

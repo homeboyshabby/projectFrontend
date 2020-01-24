@@ -30,6 +30,7 @@ export class EmpLoginComponent implements OnInit {
     } else {
       this.service.checkLoginCredentailsWithDBForEmp(empObj).subscribe((res) => {
         this.user = res;
+        console.log(this.user)
       })
 
       if (this.user.employeeEmail == this.email) {
@@ -48,6 +49,10 @@ export class EmpLoginComponent implements OnInit {
           sessionStorage['a_login_status'] = '1';
           sessionStorage['role'] = 'a';
           this.router.navigate(['/admin']);
+        } else if (this.user.role == "DELIVERYBOY") {
+          sessionStorage['d_login_status'] = '1';
+          sessionStorage['role'] = 'd';
+          this.router.navigate(['/dboy']);
         }
       }
     }

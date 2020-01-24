@@ -38,6 +38,11 @@ import { AuthService } from './auth.service';
 import { WaiterAuthService } from './waiter-auth.service';
 import { AdminAuthService } from './admin-auth.service';
 import { ManagerAuthService } from './manager-auth.service';
+import { DelboyPendingordersComponent } from './delboy-pendingorders/delboy-pendingorders.component';
+import { DelboyAllordersComponent } from './delboy-allorders/delboy-allorders.component';
+import { DelboyComponent } from './delboy/delboy.component';
+import { DelboyDeliveredordersComponent } from './delboy-deliveredorders/delboy-deliveredorders.component';
+import { DelboyAuthService } from './delboy-auth.service';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, children: [{ path: "", component: MainComponent }] },
@@ -80,6 +85,10 @@ const routes: Routes = [
   { path: "customer", component: CustomerComponent, children: [{ path: "reservations", component: ReservationsComponent }], canActivate: [AuthService] },
   { path: "customer", component: CustomerComponent, children: [{ path: "onlineorder", component: OrderOnlineComponent }], canActivate: [AuthService] },
   { path: "customer", component: CustomerComponent, children: [{ path: "bills", component: ShowBillsComponent }], canActivate: [AuthService] },
+  // 
+  { path: "dboy", component: DelboyComponent, children: [{ path: "", component: DelboyPendingordersComponent }], canActivate: [DelboyAuthService] },
+  { path: "dboy", component: DelboyComponent, children: [{ path: "orders", component: DelboyDeliveredordersComponent }], canActivate: [DelboyAuthService] },
+  { path: "dboy", component: DelboyComponent, children: [{ path: "allorders", component: DelboyAllordersComponent }], canActivate: [DelboyAuthService] }
 ];
 
 @NgModule({

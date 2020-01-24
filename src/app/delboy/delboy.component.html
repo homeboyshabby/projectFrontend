@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+<body>
+  <nav class="navbar navbar-inverse" style="background-color: black;font-family: monospace;font-size: 24px;color: white">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div> 
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav"> 
+            <li><a routerLink="/dboy">Pending Orders</a></li>
+          <li><a routerLink="/dboy/orders">Delivered Orders</a></li>
+          <li><a routerLink="/dboy/allorders">All Orders</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <button (click)="onLogout()" style="font-size: 20px;float: right;" type="submit" class="btn btn-danger">Logout</button>
+</body>
+</html>
+<!-- <div class="container">
+    <h2 style="font-family: monospace;color: black"> Hi {{name}}!</h2>
+</div> -->
+<router-outlet></router-outlet>

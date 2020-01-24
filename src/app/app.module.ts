@@ -39,6 +39,10 @@ import { ManagerTablelistComponent } from './manager-tablelist/manager-tablelist
 import { ShoworderDetailsComponent } from './showorder-details/showorder-details.component';
 import { AddEmpComponent } from './add-emp/add-emp.component';
 import { WaiterBillComponent } from './waiter-bill/waiter-bill.component';
+import { DelboyComponent } from './delboy/delboy.component';
+import { DelboyPendingordersComponent } from './delboy-pendingorders/delboy-pendingorders.component';
+import { DelboyDeliveredordersComponent } from './delboy-deliveredorders/delboy-deliveredorders.component';
+import { DelboyAllordersComponent } from './delboy-allorders/delboy-allorders.component';
 
 
 @NgModule({
@@ -78,7 +82,11 @@ import { WaiterBillComponent } from './waiter-bill/waiter-bill.component';
     ManagerTablelistComponent,
     ShoworderDetailsComponent,
     AddEmpComponent,
-    WaiterBillComponent
+    WaiterBillComponent,
+    DelboyComponent,
+    DelboyPendingordersComponent,
+    DelboyDeliveredordersComponent,
+    DelboyAllordersComponent
   ],
   imports: [
     BrowserModule,
