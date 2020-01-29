@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   user: any;
   count = 0;
   constructor(private router: Router,
-    private service: DataService) {
+    private service: DataService,private toster:ToastrService) {
   }
 
   ngOnInit() {
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.service.checkLoginCredentailsWithDB(custObj).subscribe((res) => {
         this.user = res;
+        
       })
 
       if (this.user.email == this.email) {
@@ -37,6 +39,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('email', custObj.email);
         localStorage.setItem('id', this.user.id);
         localStorage.setItem('flag', 'true');
+        this.toster.success("Hi! " + this.user.name);
         this.router.navigate(['/customer/']);
       }
       else {

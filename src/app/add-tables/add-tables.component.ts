@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-tables',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class AddTablesComponent implements OnInit {
   currentTableCount: any;
   nextId = 0;
-  constructor(private service: DataService, private router: Router) { }
+  constructor(private service: DataService, private router: Router, private toster: ToastrService) { }
 
   ngOnInit() {
     this.service.getCurrentTableCount().subscribe((res) => {
@@ -24,12 +25,14 @@ export class AddTablesComponent implements OnInit {
     if (tableObj.noOfChairs != "") {
       this.service.addTable(tableObj).subscribe((res) => {
       })
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.toster.success("New table added with ID " + this.nextId + " with chair count of " + tableObj.noOfChairs);
+        this.router.navigate(['/admin/addtables']);
+      });
     } else {
       alert("enter number of chairs first!")
     }
-    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/admin/addtables']);
-    });
+
   }
 
 }

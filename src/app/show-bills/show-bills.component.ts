@@ -25,9 +25,10 @@ export class ShowBillsComponent implements OnInit {
       "billAmt": this.totalBill,
       "order": JSON.parse(sessionStorage.getItem("orderId")).orderId
     }
+    alert("Bill Paid Successfully!")
     this.service.generateBill(this.bill).subscribe((res) => {
     })
-    alert("Bill Paid Successfully!")
+    
     sessionStorage.setItem("count", this.c.toString())
     
   }

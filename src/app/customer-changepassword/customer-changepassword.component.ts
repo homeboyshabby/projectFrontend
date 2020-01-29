@@ -19,9 +19,16 @@ export class CustomerChangepasswordComponent implements OnInit {
   }
   onChangePassword(formDate) {
     let custObj = formDate.form.value;
-    this.service.changeMyPassword(custObj).subscribe((res) => {
-    });
-    alert("Password Changed Successfully!")
-    this.router.navigate(['/customer/changepassword']);
+    if(formDate.form.value.newpassword == 0)
+    {
+      alert('Enter New Password first')
+    }
+    else
+    {
+      this.service.changeMyPassword(custObj).subscribe((res) => {
+      });
+      alert("Password Changed Successfully!")
+      this.router.navigate(['/customer/changepassword']);
+    }
   }
 }

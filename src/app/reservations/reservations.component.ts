@@ -15,10 +15,29 @@ export class ReservationsComponent implements OnInit {
   }
   addReservation(formData) {
     let resObj = formData.form.value;
-    this.service.addMyReservation(resObj, parseInt(localStorage.getItem("id"))).subscribe((res) => {
-    })
-    alert("new reservation added!")
-    this.router.navigate(['/customer/myreservations']);
+
+    let ppl = formData.form.value.resNumberOfPeople;
+    let date = formData.form.value.resDate;
+
+    if( ppl <= 0 || date == "")
+    {
+      if(ppl <= 0)
+      {
+        alert('Enter valid No. of ppl');
+      }
+      else
+      {
+        alert('Enter Date');
+      }
+    }
+
+    if(ppl > 0 && date != "")
+    {
+      this.service.addMyReservation(resObj, parseInt(localStorage.getItem("id"))).subscribe((res) => {
+      })
+      alert("new reservation added!")
+      this.router.navigate(['/customer/myreservations']);
+    }
   }
 
 }

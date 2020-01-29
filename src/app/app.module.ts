@@ -43,8 +43,8 @@ import { DelboyComponent } from './delboy/delboy.component';
 import { DelboyPendingordersComponent } from './delboy-pendingorders/delboy-pendingorders.component';
 import { DelboyDeliveredordersComponent } from './delboy-deliveredorders/delboy-deliveredorders.component';
 import { DelboyAllordersComponent } from './delboy-allorders/delboy-allorders.component';
-
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,7 +92,9 @@ import { DelboyAllordersComponent } from './delboy-allorders/delboy-allorders.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

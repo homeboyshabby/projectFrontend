@@ -17,5 +17,9 @@ export class EditEmpComponent implements OnInit {
       this.emp = res;
     })
   }
+  onEditProfile(formData)
+  {
+    
+  }
 
 }

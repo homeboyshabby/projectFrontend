@@ -1,14 +1,14 @@
 <body>
     <form class="box" #myForm="ngForm" (ngSubmit)="onRegistration(myForm)">
         <h1 style="font-family: monospace;color:white">Register</h1>
-        <input [(ngModel)]="name" type="text" name="name" placeholder="Name">
-        <input [(ngModel)]="email" type="text" name="email" placeholder="Email">
-        <input [(ngModel)]="phoneNumber" type="text" name="phoneNumber" placeholder="Phone Number">
-        <input [(ngModel)]="password" type="password" name="password" placeholder="Password">
-        <input [(ngModel)]="flatNo" type="text" name="flatNo" placeholder="Flat No">
-        <input [(ngModel)]="buildingName" type="text" name="buildingName" placeholder="Building Name">
-        <input [(ngModel)]="Area" type="text" name="Area" placeholder="Area">
-        <input [(ngModel)]="City" type="text" name="City" placeholder="City">
+        <input ngModel type="text" name="name" placeholder="Name">
+        <input ngModel type="text" name="email" placeholder="Email">
+        <input ngModel type="text" name="phoneNumber" placeholder="Phone Number">
+        <input ngModel type="password" name="password" placeholder="Password">
+        <input ngModel type="text" name="flatNo" placeholder="Flat No">
+        <input ngModel type="text" name="buildingName" placeholder="Building Name">
+        <input ngModel type="text" name="Area" placeholder="Area">
+        <input ngModel type="text" name="City" placeholder="City">
         <input type="submit" name="" value="Register">
     </form>
     <hr>

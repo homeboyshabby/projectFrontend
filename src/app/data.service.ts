@@ -7,57 +7,57 @@ import { HttpClient } from '@angular/common/http';
 // Project_demo_spring_hib_rest
 export class DataService {
   //send email
-  sendEmailUrl = "http://localhost:8080/Project/email/"
+  sendEmailUrl = "http://15.206.149.199:8080/Project/email/"
   //
   //admin 
-  tablesUrl = "http://localhost:8080/Project/waiter/tables"
-  menuUrl = "http://localhost:8080/Project/waiter/menu"
-  orderStatusUrl = "http://localhost:8080/Project/admin/orderdetails"
-  addMenuUrl = "http://localhost:8080/Project/admin/addmenu"
-  showEmpUrl = "http://localhost:8080/Project/admin/showemp"
-  getEmpByIdUrl = "http://localhost:8080/Project/admin/getemp/"
-  showCustUrl = "http://localhost:8080/Project/admin/customers"
-  getCustOrderDtlByIdUrl = "http://localhost:8080/Project/admin/getcustorders/"
-  getCustReservationDtlByIdUrl = "http://localhost:8080/Project/admin/getcustreservations/"
-  getCurrentTableCountUrl = "http://localhost:8080/Project/admin/tablecount"
-  addTableUrl = "http://localhost:8080/Project/admin/addtable"
-  getOrderDetailsUrl = "http://localhost:8080/Project/admin/getorderdetails/"
-  addEmpUrl = "http://localhost:8080/Project/admin/addemp/"
-  changeOrderStatusUrl = "http://localhost:8080/Project/admin/changeorderstatus/"
+  tablesUrl = "http://15.206.149.199:8080/Project/waiter/tables"
+  menuUrl = "http://15.206.149.199:8080/Project/waiter/menu"
+  orderStatusUrl = "http://15.206.149.199:8080/Project/admin/orderdetails"
+  addMenuUrl = "http://15.206.149.199:8080/Project/admin/addmenu"
+  showEmpUrl = "http://15.206.149.199:8080/Project/admin/showemp"
+  getEmpByIdUrl = "http://15.206.149.199:8080/Project/admin/getemp/"
+  showCustUrl = "http://15.206.149.199:8080/Project/admin/customers"
+  getCustOrderDtlByIdUrl = "http://15.206.149.199:8080/Project/admin/getcustorders/"
+  getCustReservationDtlByIdUrl = "http://15.206.149.199:8080/Project/admin/getcustreservations/"
+  getCurrentTableCountUrl = "http://15.206.149.199:8080/Project/admin/tablecount"
+  addTableUrl = "http://15.206.149.199:8080/Project/admin/addtable"
+  getOrderDetailsUrl = "http://15.206.149.199:8080/Project/admin/getorderdetails/"
+  addEmpUrl = "http://15.206.149.199:8080/Project/admin/addemp/"
+  changeOrderStatusUrl = "http://15.206.149.199:8080/Project/admin/changeorderstatus/"
   //
   //auth
-  authCustomerUrl = "http://localhost:8080/Project/auth/cust"
-  authEmpUrl = "http://localhost:8080/Project/authemp"
+  authCustomerUrl = "http://15.206.149.199:8080/Project/auth/cust"
+  authEmpUrl = "http://15.206.149.199:8080/Project/authemp"
   //
   //customer 
-  addCustomerUrl = "http://localhost:8080/Project/admin"
-  customerMyOrderUrl = "http://localhost:8080/Project/cust/myorders/"
-  getMyProfileUrl = "http://localhost:8080/Project/cust/myprofile/"
-  setMyProfileUrl = "http://localhost:8080/Project/cust/setmyprofile"
-  changeMyPasswordUrl = "http://localhost:8080/Project/cust/changepassword"
-  showMyReservationsUrl = "http://localhost:8080/Project/cust/myreservations"
-  deleteMyReservationsUrl = "http://localhost:8080/Project/cust/deletemyreservation"
-  orderOnlineUrl = "http://localhost:8080/Project/cust/orderonline"
-  addMyReservationUrl = "http://localhost:8080/Project/cust/addmyreservation/"
-  getOrderIdUrl = "http://localhost:8080/Project/cust/setorder/"
-  addOrderDetailsUrl = "http://localhost:8080/Project/cust/addorderdetails/"
-  generateBillUrl = "http://localhost:8080/Project/cust/genratebill"
+  addCustomerUrl = "http://15.206.149.199:8080:8080/Project/admin"
+  customerMyOrderUrl = "http://15.206.149.199:8080/Project/cust/myorders/"
+  getMyProfileUrl = "http://15.206.149.199:8080/Project/cust/myprofile/"
+  setMyProfileUrl = "http://15.206.149.199:8080/Project/cust/setmyprofile"
+  changeMyPasswordUrl = "http://15.206.149.199:8080/Project/cust/changepassword"
+  showMyReservationsUrl = "http://15.206.149.199:8080/Project/cust/myreservations"
+  deleteMyReservationsUrl = "http://15.206.149.199:8080/Project/cust/deletemyreservation"
+  orderOnlineUrl = "http://15.206.149.199:8080/Project/cust/orderonline"
+  addMyReservationUrl = "http://15.206.149.199:8080/Project/cust/addmyreservation/"
+  getOrderIdUrl = "http://15.206.149.199:8080/Project/cust/setorder/"
+  addOrderDetailsUrl = "http://15.206.149.199:8080/Project/cust/addorderdetails/"
+  generateBillUrl = "http://15.206.149.199:8080/Project/cust/genratebill"
   //
   // manager 
-  getBillsUrl = "http://localhost:8080/Project/manager/bills"
-  getOrderIdForSaleReportUrl = "http://localhost:8080/Project/manager/getorderidhd"
-  getOrderAmtForSaleReportUrl = "http://localhost:8080/Project/manager/getorderid/"
-  getOrderIdForDineInSaleReportUrl = "http://localhost:8080/Project/manager/getorderiddi"
+  getBillsUrl = "http://15.206.149.199:8080/Project/manager/bills"
+  getOrderIdForSaleReportUrl = "http://15.206.149.199:8080/Project/manager/getorderidhd"
+  getOrderAmtForSaleReportUrl = "http://15.206.149.199:8080/Project/manager/getorderid/"
+  getOrderIdForDineInSaleReportUrl = "http://15.206.149.199:8080/Project/manager/getorderiddi"
   //
   // waiter 
-  getOrderIdWaiterUrl = "http://localhost:8080/Project/waiter/setorder"
-  addOrderDetailsWaiterUrl = "http://localhost:8080/Project/waiter/addorderdetails/"
+  getOrderIdWaiterUrl = "http://15.206.149.199:8080/Project/waiter/setorder"
+  addOrderDetailsWaiterUrl = "http://15.206.149.199:8080/Project/waiter/addorderdetails/"
   //
   // delivery boy 
-  getPendingOrdersUrl = "http://localhost:8080/Project/dboy/pendingorders"
-  getDeliveredOrdersUrl = "http://localhost:8080/Project/dboy/deliveredorders"
-  getAllOrdersUrl = "http://localhost:8080/Project/dboy/allorders"
-  changeOrderStatusDBoyUrl = "http://localhost:8080/Project/dboy/changeorderstatus/"
+  getPendingOrdersUrl = "http://15.206.149.199:8080/Project/dboy/pendingorders"
+  getDeliveredOrdersUrl = "http://15.206.149.199:8080/Project/dboy/deliveredorders"
+  getAllOrdersUrl = "http://15.206.149.199:8080/Project/dboy/allorders"
+  changeOrderStatusDBoyUrl = "http://15.206.149.199:8080/Project/dboy/changeorderstatus/"
   //
   constructor(public http: HttpClient) { }
   // start delivery boy
@@ -179,6 +179,7 @@ export class DataService {
   }
 
   getMenu() {
+    console.log("in menu service")
     return this.http.get(this.menuUrl);
   }
 
