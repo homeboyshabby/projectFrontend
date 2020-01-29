@@ -14,7 +14,7 @@
                 <td>{{item.orderId}}</td>
                 <td>{{item.orderDate}}</td>
                 <td>{{item.orderType}}</td>
-                <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'OUTFORDELIVERY'" ><button (click)="changeStatus(item.orderId)" type="submit" class="btn btn-danger">{{item.status}}</button></td>
+                <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'OUTFORDELIVERY'" ><button (click)="changeStatus(item.orderId,item.custId.email,item.custId.name)" type="submit" class="btn btn-danger">{{item.status}}</button></td>
                 <td *ngIf="item.orderType == 'HOMEDELIVERY' && item.status == 'DELIVERED'" ><button disabled type="submit" class="btn btn-danger">{{item.status}}</button></td>
             </tr>
         </tbody>

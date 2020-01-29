@@ -19,20 +19,16 @@ export class ReservationsComponent implements OnInit {
     let ppl = formData.form.value.resNumberOfPeople;
     let date = formData.form.value.resDate;
 
-    if( ppl <= 0 || date == "")
-    {
-      if(ppl <= 0)
-      {
+    if (ppl <= 0 || date == "") {
+      if (ppl <= 0) {
         alert('Enter valid No. of ppl');
       }
-      else
-      {
+      else {
         alert('Enter Date');
       }
     }
 
-    if(ppl > 0 && date != "")
-    {
+    if (ppl > 0 && date != "") {
       this.service.addMyReservation(resObj, parseInt(localStorage.getItem("id"))).subscribe((res) => {
       })
       alert("new reservation added!")

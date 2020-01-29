@@ -13,6 +13,7 @@ export class ShowBillsComponent implements OnInit {
   totalBill = 0;
   bill: any;
   c = 0;
+  emailObj:any;
   constructor(private service: DataService, private router: Router) { }
 
   ngOnInit() {
@@ -28,9 +29,17 @@ export class ShowBillsComponent implements OnInit {
     alert("Bill Paid Successfully!")
     this.service.generateBill(this.bill).subscribe((res) => {
     })
-    
+
+    this.emailObj = {
+      "destEmail": localStorage.getItem("email"),
+      "message": "Thank you for ordering! your bill amount is " + this.totalBill + " with order ID " + JSON.parse(sessionStorage.getItem("orderId")).orderId + " it will be delivered soon!",
+      "subject": "Order Details"
+    }
+    this.service.sendEmail(this.emailObj).subscribe((res) => {
+    })
+
     sessionStorage.setItem("count", this.c.toString())
-    
+
   }
   onPay() {
     this.router.navigate(['/customer/orders']);

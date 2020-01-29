@@ -11,9 +11,7 @@ export class DelboyAllordersComponent implements OnInit {
   constructor(private service:DataService) { }
 
   ngOnInit() {
-    console.log("all")
     this.service.getAllOrders().subscribe((res)=>{
-      console.log(res)
       this.orders = res
     })
   }

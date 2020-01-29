@@ -30,7 +30,6 @@ export class EmpLoginComponent implements OnInit {
     } else {
       this.service.checkLoginCredentailsWithDBForEmp(empObj).subscribe((res) => {
         this.user = res;
-        console.log(this.user)
       })
 
       if (this.user.employeeEmail == this.email) {

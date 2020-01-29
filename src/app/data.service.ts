@@ -30,7 +30,7 @@ export class DataService {
   authEmpUrl = "http://15.206.149.199:8080/Project/authemp"
   //
   //customer 
-  addCustomerUrl = "http://15.206.149.199:8080:8080/Project/admin"
+  addCustomerUrl = "http://15.206.149.199:8080/Project/admin"
   customerMyOrderUrl = "http://15.206.149.199:8080/Project/cust/myorders/"
   getMyProfileUrl = "http://15.206.149.199:8080/Project/cust/myprofile/"
   setMyProfileUrl = "http://15.206.149.199:8080/Project/cust/setmyprofile"
@@ -75,9 +75,7 @@ export class DataService {
   }
   // end delivery boy
   // email
-  sendEmail(emailObj)
-  {
-    //console.log(emailObj)
+  sendEmail(emailObj) {
     return this.http.post(this.sendEmailUrl, emailObj);
   }
   //
@@ -179,7 +177,6 @@ export class DataService {
   }
 
   getMenu() {
-    console.log("in menu service")
     return this.http.get(this.menuUrl);
   }
 

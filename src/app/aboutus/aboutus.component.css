@@ -2,58 +2,30 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100vh;
+    height: 90em;
     font-family: monospace;
     font-weight: 400;
     /* background: url(background-img.jpg); */
     background-position: center;
     background-size: cover;
-}
-
-html {
+  }
+  
+  html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100vh;
-}
-
-/* .main {
-    height: 100%;
-    background-image: url("../../assets/main2.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
-.image{
-    height:65em; 
-    background-image:url("../../assets/alcohol-architecture-bar-beer-260922.jpg");
-    background-position: 90% center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
-
-
-/* #login {
-    margin-top: -3px;
-    height: 100%;
-    background-image: url("loginimg.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-} */
-
-#second1 {
+  #second1 {
     background-color: black;
     /* background-image: url("main1.jpg"); */
     width: 50%;
     height:90em; 
+    margin-left: 50%;
     /* color: red; */
-}
-
-#three1 {
-    /* background-image: url("../../assets/cocktails-neon-signage-3566120.jpg"); */
+  }
+  
+  #three1 {
     background-color: black;
     margin-left: 50%;
     margin-top: -1260px;
@@ -61,57 +33,39 @@ html {
     width: 50%;
     height: 90em;
     color: white;
-}
-
-#four1 {
+  }
+  
+  #four1 {
     background-color: black;
     left: 0%;
     /* right: 0%; */
     width: 100%;
     height: 90em;
     color: white;
-}
-
-#fourtb {
+  }
+  
+  #fourtb {
     width: 100%;
     height: 100%;
-}
-
-#up {
+  }
+  
+  #up {
     background-color: white;
-}
+  }
 
-#down {
-    height: 82em;
-    background-image: url("../../assets/sea-shore-view-on-sunset-130879.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    left: 0%;
-}
-
-#second2 {
-    background-image: url("../../assets/div1.jpg");
-    margin-left: 50%;
-    right: 0%;  
-    width: 50%;
-    height: 90em;
-    /* background-position: 90% center; */
-}
-
-#second2img {
-    height: 90em;
+  #second2img {
+    height: 60em;
     margin-top: -1260px;
-    background-image: url("../../assets/div1.jpg");
+    background-image: url("../../assets/Restaurant.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     float: left;
     width: 50%;
-    margin-left: 50%;
-}
-
-#three1img {
+    margin-right: 50%;
+  }
+  
+  #three1img {
     height: 100%;
     background-image: url("../../assets/food1.jpg");
     background-position: center;
@@ -120,64 +74,53 @@ html {
     float: left;
     width: 100%;
     left: 0%;
-}
-
-
-/* #loginDiv {
-    left: 57%;
-    top: 50%;
-    background-color: black;
-    height: 80%;
-    width: 44%;
-    margin-left: 23%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-} */
-
-#subdiv1 {
+  }
+  #subdiv1 {
     float: left;
     width: 80%;
-    position: relative;
-}
-
-.wordswhite {
+    position: absolute;
+  }
+  
+  .wordswhite {
     color: white;
     font-family: monospace;
     font-weight: 100;
     font-size: 20px;
-    margin: 150px 300px 300px -897px;
-}
-
-.wordswhitepara {
+    margin: 65%;
+  }
+  
+  .wordswhitepara {
     color: white;
     font-family: monospace;
     font-weight: 100;
     font-size: 20px;
-    margin: 256px 300px 300px -897px;
+    /* float: left; */
+    margin: 51% 51% 51% 51%;
     width: 800px;
     position: absolute;
-}
-
-input[type="button"],
-input[type="text"],
-input[type="password"] {
+  }
+  
+  input[type="button"],
+  input[type="text"],
+  input[type="password"] {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: monospace;
-}
-
-input[type="radio"] {
+  }
+  
+  input[type="radio"] {
     /* position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: monospace; */
-}
-
-input[type="button"],
-input[type="text"],
-input[type="password"] {
+  }
+  
+  input[type="button"],
+  input[type="text"],
+  input[type="password"] {
     background: none;
     color: white;
     width: 240px;
@@ -189,13 +132,13 @@ input[type="password"] {
     overflow: hidden;
     top: 175%;
     left: 24%;
-}
-
-input[type="button"]:focus {
+  }
+  
+  input[type="button"]:focus {
     outline: none;
-}
-
-input[type="button"]:before {
+  }
+  
+  input[type="button"]:before {
     content: '';
     display: block;
     position: absolute;
@@ -207,9 +150,9 @@ input[type="button"]:before {
     opacity: .5;
     filter: blur(30px);
     transform: translateX(-130px) skewX(-15deg);
-}
-
-input[type="button"]:after {
+  }
+  
+  input[type="button"]:after {
     content: '';
     display: block;
     position: absolute;
@@ -221,100 +164,100 @@ input[type="button"]:after {
     opacity: 0;
     filter: blur(30px);
     transform: translate(-100px) scaleX(-15deg);
-}
-
-input[type="button"]:hover {
+  }
+  
+  input[type="button"]:hover {
     background: white;
     cursor: pointer;
     color: black;
-}
-
-input[type="button"]:hover:before {
+  }
+  
+  input[type="button"]:hover:before {
     transform: translateX(300px) skewX(-15deg);
     opacity: .6;
     transition: .7s;
-}
-
-input[type="button"]:hover:after {
+  }
+  
+  input[type="button"]:hover:after {
     transform: translateX(300px) skewX(-15deg);
     opacity: 1;
     transition: .7s;
-}
-
-.container {
+  }
+  
+  .container {
     display: inline-block;
     cursor: pointer;
-}
-
-.bar1,
-.bar2,
-.bar3 {
+  }
+  
+  .bar1,
+  .bar2,
+  .bar3 {
     width: 35px;
     height: 5px;
     background-color: #333;
     margin: 6px 0;
     transition: 0.4s;
-}
-
-.change .bar1 {
+  }
+  
+  .change .bar1 {
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {
+  }
+  
+  .change .bar2 {
     opacity: 0;
-}
-
-.change .bar3 {
+  }
+  
+  .change .bar3 {
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-8px, -8px);
-}
-
-#options {
+  }
+  
+  #options {
     display: none;
     background-color: black;
     height: 100%;
     width: 100%;
-}
-
-nav {
+  }
+  
+  nav {
     padding: 8px;
-}
-
-.logo {
+  }
+  
+  .logo {
     float: left;
     padding: 8px;
     margin-left: 16px;
     margin-top: 8px;
-}
-
-.logo a {
+  }
+  
+  .logo a {
     color: white;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 18px;
     letter-spacing: 0px;
     text-decoration: none;
-}
-
-nav ul {
+  }
+  
+  nav ul {
     float: right;
-}
-
-nav ul li {
+  }
+  
+  nav ul li {
     display: inline-block;
     float: left;
-}
-
-nav ul li:not(:first-child) {
+  }
+  
+  nav ul li:not(:first-child) {
     margin-left: 48px;
-}
-
-nav ul li:last-child {
+  }
+  
+  nav ul li:last-child {
     margin-right: 24px;
-}
-
-nav ul li a {
+  }
+  
+  nav ul li a {
     display: inline-block;
     outline: none;
     color: white;
@@ -323,9 +266,9 @@ nav ul li a {
     font-size: 14px;
     letter-spacing: 1.2px;
     font-weight: 600;
-}
-
-@media screen and (max-width: 864px) {
+  }
+  
+  @media screen and (max-width: 864px) {
     .logo {
         padding: 0;
         /* color: white; */
@@ -408,70 +351,70 @@ nav ul li a {
     .nav-btn i:nth-child(3) {
         margin-top: 4px;
     }
-}
-
-#nav:checked+.nav-btn {
+  }
+  
+  #nav:checked+.nav-btn {
     transform: rotate(45deg);
-}
-
-#nav:checked+.nav-btn i {
+  }
+  
+  #nav:checked+.nav-btn i {
     background: #000;
     transition: transform 0.2s ease;
-}
-
-#nav:checked+.nav-btn i:nth-child(1) {
+  }
+  
+  #nav:checked+.nav-btn i:nth-child(1) {
     transform: translateY(6px) rotate(180deg);
-}
-
-#nav:checked+.nav-btn i:nth-child(2) {
+  }
+  
+  #nav:checked+.nav-btn i:nth-child(2) {
     opacity: 0;
-}
-
-#nav:checked+.nav-btn i:nth-child(3) {
+  }
+  
+  #nav:checked+.nav-btn i:nth-child(3) {
     transform: translateY(-6px) rotate(90deg);
-}
-
-#nav:checked~.nav-wrapper {
+  }
+  
+  #nav:checked~.nav-wrapper {
     z-index: 9990;
     opacity: 1;
-}
-
-#nav:checked~.nav-wrapper ul li a {
+  }
+  
+  #nav:checked~.nav-wrapper ul li a {
     opacity: 1;
     transform: translateX(0);
-}
-
-.hidden {
+  }
+  
+  .hidden {
     display: none;
-}
-
-.container {
+  }
+  
+  .container {
     width: 100%;
     background-color: black;
-}
-
-a {
+  }
+  
+  a {
     transition: all 500ms ease-out;
     z-index: 2;
-}
-
-
-/* * {
+  }
+  
+  
+  /* * {
     box-sizing: border-box;
-} */
-
-
-/* login page css */
-
-
-/* #loginh2 {
+  } */
+  
+  
+  /* login page css */
+  
+  
+  /* #loginh2 {
     font-family: monospace;
     text-align: center;
     top: 5%;
     font-size: 30px;
- }  */
-
-#logininput {
+  }  */
+  
+  #logininput {
     width: 674px;
     margin: 5px 0 22px 0;
     border: none;
@@ -479,18 +422,18 @@ a {
     top: 55%;
     left: 451px;
     color: black;
-}
-
-
-/* #loginlabel {
+  }
+  
+  
+  /* #loginlabel {
     font-family: monospace;
     font-size: 20px;
     text-align: center;
     margin: 5px;
-} */
-
-
-/* #logininputpsw {
+  } */
+  
+  
+  /* #logininputpsw {
     width: 810px;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -500,19 +443,32 @@ a {
     top: 31%;
     left: 828px;
     color: black;
-} */
-
-#loginh2reg {
+  } */
+  
+  #loginh2reg {
     font-family: monospace;
     text-align: center;
     top: 5%;
     font-size: 30px;
     margin-top: 180px;
-}
-
-
-/* #content {
+  }
+  
+  
+  /* #content {
     width: 400px;
     margin: 0 auto;
     background-color: #66ffff;
-} */
+  } */
+
+  .a1
+  {
+    background-image: url("../../assets/assorted-bottle-inside-bar-941864.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* float: left; */
+    width: 100%;
+    /* margin-right: 50%; */
+    height: 40em;
+    /* margin-top: -1260px; */
+  }

@@ -28,7 +28,6 @@ export class ManagerDailyreportComponent implements OnInit {
       }
     })
     this.service.getOrderIdForDineInSaleReport().subscribe((res) => {
-      //console.log(res)
       this.orderIdForDineIn = res;
       for (let i = 0; i < this.orderIdForDineIn.length; i++) {
         this.service.getOrderAmtForSaleReport(this.orderIdForDineIn[i]).subscribe((res) => {

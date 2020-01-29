@@ -43,6 +43,8 @@ import { DelboyAllordersComponent } from './delboy-allorders/delboy-allorders.co
 import { DelboyComponent } from './delboy/delboy.component';
 import { DelboyDeliveredordersComponent } from './delboy-deliveredorders/delboy-deliveredorders.component';
 import { DelboyAuthService } from './delboy-auth.service';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: "", component: HomeComponent, children: [{ path: "", component: MainComponent }] },
@@ -51,6 +53,8 @@ const routes: Routes = [
   { path: "home", component: HomeComponent, children: [{ path: "menu", component: MenuListComponent }] },
   { path: "home", component: HomeComponent, children: [{ path: "employee", component: EmpLoginComponent }] },
   { path: "home", component: HomeComponent, children: [{ path: "register", component: RegisterComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "about", component: AboutusComponent }] },
+  { path: "home", component: HomeComponent, children: [{ path: "contact", component: ContactComponent }] },
   //
   { path: "waiter", component: WaiterComponent, children: [{ path: "", component: MenuListComponent }], canActivate: [WaiterAuthService] },
   { path: "waiter", component: WaiterComponent, children: [{ path: "table", component: TableListComponent }], canActivate: [WaiterAuthService] },

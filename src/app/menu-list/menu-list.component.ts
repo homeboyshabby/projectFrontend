@@ -11,7 +11,6 @@ export class MenuListComponent implements OnInit {
   constructor(private service: DataService) { }
 
   ngOnInit() {
-    console.log("in menu list")
     let obs = this.service.getMenu();
 
     obs.subscribe((res) => {

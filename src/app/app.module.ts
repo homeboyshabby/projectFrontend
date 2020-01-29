@@ -45,6 +45,8 @@ import { DelboyDeliveredordersComponent } from './delboy-deliveredorders/delboy-
 import { DelboyAllordersComponent } from './delboy-allorders/delboy-allorders.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactComponent } from './contact/contact.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,7 +88,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DelboyComponent,
     DelboyPendingordersComponent,
     DelboyDeliveredordersComponent,
-    DelboyAllordersComponent
+    DelboyAllordersComponent,
+    ContactComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule,
